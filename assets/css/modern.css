@@ -1,0 +1,248 @@
+/* modern.css - Modern Almuslim Theme 2.0 (True Flexbox/Grid Layout) */
+@import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap');
+
+:root {
+    --primary-green: #0C6136; /* Almuslim Green */
+    --accent-green: #15A556;
+    --light-green: #E6F4EA;
+    --dark-green: #064022;
+    --bg-color: #F4F8F5; /* subtle green-gray */
+    --text-color: #333333;
+    --white: #ffffff;
+    --shadow-soft: 0 4px 20px rgba(0,0,0,0.05);
+    --shadow-hover: 0 10px 25px rgba(12, 97, 54, 0.15);
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: 'Plus Jakarta Sans', sans-serif !important;
+    background: var(--bg-color) !important;
+    color: var(--text-color) !important;
+    line-height: 1.6;
+}
+
+/* Typography override */
+h1, h2, h3, h4, h5, h6, .judul {
+    font-family: 'Plus Jakarta Sans', sans-serif !important;
+    font-weight: 700;
+}
+
+/* Main Layout Container */
+.app-container {
+    max-width: 1200px;
+    margin: 40px auto;
+    background: var(--white);
+    border-radius: 12px;
+    box-shadow: var(--shadow-soft);
+    overflow: hidden;
+}
+
+/* modern header */
+.modern-header {
+    background: linear-gradient(135deg, var(--dark-green), var(--primary-green));
+    padding: 30px 20px;
+    text-align: center;
+    color: white;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 15px;
+}
+
+.modern-header h1 {
+    font-size: 24px;
+    text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
+    letter-spacing: 0.5px;
+    margin: 0;
+}
+
+.modern-header img {
+    height: 70px;
+}
+
+/* Content Layout Area */
+.main-content-area {
+    display: flex;
+    flex-direction: column;
+    min-height: 500px;
+}
+
+@media(min-width: 768px) {
+    .main-content-area {
+        flex-direction: row;
+    }
+}
+
+/* Sidebar Wrapper */
+.sidebar {
+    width: 100%;
+    background: #fdfdfd;
+    padding: 30px;
+    border-right: 1px solid #eee;
+}
+
+@media(min-width: 768px) {
+    .sidebar { width: 300px; flex-shrink: 0; }
+}
+
+/* Page Content Wrapper */
+.page-content {
+    flex-grow: 1;
+    padding: 30px;
+    background: var(--white);
+}
+
+/* Sidebar Menu Tweaks */
+.sidebar h3.judul { 
+    color: var(--primary-green); 
+    border-bottom: 2px solid var(--accent-green); 
+    padding-bottom: 10px; 
+    margin-bottom: 20px;
+    font-size: 18px;
+}
+
+.sidebar a {
+    display: block;
+    padding: 12px 15px;
+    border-radius: 6px;
+    margin-bottom: 8px;
+    background: var(--light-green);
+    color: var(--dark-green);
+    font-weight: 600;
+    transition: all 0.2s;
+    text-decoration: none;
+}
+
+.sidebar a:hover {
+    background: var(--primary-green);
+    color: white;
+    padding-left: 20px;
+}
+
+/* Footer */
+.modern-footer {
+    background: linear-gradient(90deg, var(--primary-green), var(--dark-green));
+    color: white;
+    text-align: center;
+    padding: 20px !important;
+    font-size: 13px;
+}
+
+/* Forms & Inputs */
+input[type="text"], input[type="password"] {
+    width: 100%;
+    padding: 12px 15px;
+    margin: 8px 0 15px 0;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    font-family: inherit;
+    outline: none;
+    transition: 0.3s;
+}
+
+input:focus { 
+    border-color: var(--primary-green); 
+    box-shadow: 0 0 0 3px rgba(12, 97, 54, 0.1); 
+}
+
+/* Base Buttons */
+.button, input[type="submit"], input[type="button"], button {
+    background: var(--primary-green);
+    color: white;
+    padding: 12px 24px;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    font-weight: 600;
+    text-transform: uppercase;
+    font-size: 13px;
+    letter-spacing: 0.5px;
+    box-shadow: 0 4px 6px rgba(12, 97, 54, 0.2);
+    transition: all 0.3s ease;
+    display: inline-block;
+    text-align: center;
+}
+
+.button:hover, input[type="submit"]:hover, input[type="button"]:hover, button:hover {
+    background: var(--dark-green);
+    transform: translateY(-2px);
+    box-shadow: 0 6px 12px rgba(12, 97, 54, 0.3);
+}
+
+/* Alerts */
+.error-alert {
+    background: #ffeeee;
+    color: #d32f2f;
+    padding: 12px 15px;
+    border-radius: 6px;
+    border-left: 4px solid #d32f2f;
+    margin-top: 15px;
+    font-weight: 500;
+}
+
+/* Data Tables */
+.tabel-data {
+    width: 100%;
+    border-collapse: collapse;
+    border: 1px solid #eee;
+    border-radius: 8px;
+    overflow: hidden;
+    margin-top: 15px;
+}
+
+.tabel-data th, .tabel-data td {
+    padding: 14px 15px;
+    border-bottom: 1px solid #eee;
+    text-align: left;
+}
+
+.tabel-data th {
+    background: var(--primary-green);
+    color: white;
+    font-weight: 600;
+}
+
+.tabel-data tr:hover td { 
+    background-color: var(--light-green); 
+}
+
+/* Backward compatibility for nested old code */
+.tabel-data a { color: var(--primary-green); text-decoration:none; font-weight:600;}
+.tabel-data a:hover { color: var(--accent-green); text-decoration:underline;}
+
+/* Slide container fix for user section */
+#slideshow {
+    position: relative;
+    height: 400px;
+    overflow: hidden;
+    border-bottom: 5px solid var(--accent-green);
+}
+#slideshow div { position:absolute; top:0; left:0; width:100%; height:100%; opacity:0; transition:opacity 1s; }
+#slideshow div.active { opacity:1; z-index:10; }
+#slideshow img { width:100%; height:100%; object-fit:cover; }
+
+/* Frontend navigation */
+.frontend-nav {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    padding: 15px;
+    background: var(--dark-green);
+}
+
+.frontend-nav a {
+    color: white;
+    text-decoration: none;
+    font-weight: 600;
+    padding: 8px 16px;
+    border-radius: 20px;
+    transition: 0.3s;
+}
+.frontend-nav a:hover {
+    background: var(--accent-green);
+}

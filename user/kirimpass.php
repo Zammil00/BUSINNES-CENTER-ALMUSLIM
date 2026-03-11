@@ -45,7 +45,7 @@ $title  = "New Password";
 $pesan  = "Username Anda : ".$email.". \nPassword Anda yang baru adalah ".$newPassword;
 
 // header email berisi alamat pengirim
-$header = "From: http://localhost/percetakan/user/index.php";
+$header = "From: http://localhost/businnes-center/user/index.php";
 
 // mengirim email
 $kirimEmail = mail($alamatEmail, $title, $pesan, $header);

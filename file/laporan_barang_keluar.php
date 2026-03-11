@@ -35,7 +35,8 @@ body,td,th {
 	font-size: 13px;
 }
 -->
-</style></head>
+</style>    <link rel="stylesheet" type="text/css" href="/businnes-center/assets/css/modern.css" />
+</head>
 
 <body>
 <table width="90%" border="0" align="center" cellpadding="0" cellspacing="0">

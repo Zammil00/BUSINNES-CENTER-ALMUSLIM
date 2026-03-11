@@ -34,6 +34,7 @@ body {
 .style2 {color: #FFFFFF}
 -->
 </style>
+    <link rel="stylesheet" type="text/css" href="/businnes-center/assets/css/modern.css" />
 </head>
 
 <body>

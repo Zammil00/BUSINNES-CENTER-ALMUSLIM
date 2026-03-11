@@ -3,13 +3,13 @@
 $host="localhost";
 $user="root";
 $password="";
-$database="percetakan";
-$connect=mysql_connect($host,$user,$password);
+$database="bc";
+$connect=mysqli_connect($host, $user, $password);
 if (! $connect)
 {
 echo "Koneksi Database Gagal";
 }
 //memilih database pada server
-mysql_select_db($database)
+mysqli_select_db($conn, $database)
 or die ("Database tidak ditemukan, silahkan dibuat terlebih dahulu ");
 ?>

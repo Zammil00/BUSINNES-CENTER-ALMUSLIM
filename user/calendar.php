@@ -347,8 +347,8 @@ if (isset($global['query_log'])) {
 	$global['query_log'] = "$querydb";
 }
 
-mysql_connect($global['dbhost'], $global['dbuser'], $global['dbpass']) or return_error("Unable to connect to host $global[dbhost]");
-mysql_select_db($global['dbname']) or return_error("Unable to select database $global[dbname]");
+mysqli_connect($global['dbhost'], $global['dbuser'], $global['dbpass']) or return_error("Unable to connect to host $global[dbhost]");
+mysqli_select_db($conn, $global['dbname']) or return_error("Unable to select database $global[dbname]");
 $global['dbresult'] = mysqli_query($conn, $querydb) or return_error("Query Error: $querydb");
 
 if ((substr($querydb,0,6)!="INSERT") && (substr($querydb,0,6)!="UPDATE") && (substr($querydb,0,6)!="DELETE")) {

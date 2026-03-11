@@ -10,7 +10,8 @@ body,td,th {
 	font-size: 13px;
 }
 -->
-</style></head>
+</style>    <link rel="stylesheet" type="text/css" href="/businnes-center/assets/css/modern.css" />
+</head>
 
 <body>
 Hasil jajak pendapat adalah sebagai berikut: <br />
@@ -21,9 +22,9 @@ $host = "localhost";
 $user = "root";
 $pswd = "";
 $player = $_POST['player'];
-$conn = @mysql_connect($host,$user,$pswd)
+$conn = @mysqli_connect($host, $user, $pswd)
 or die("Koneksi gagal: " . mysqli_error($conn));
-mysql_select_db("percetakan",$conn);
+mysqli_select_db($conn, "bc");
 // mengupdate suara
 $strSQL = "update favplayer set suara=suara+1 where nama='$player'";
 $upd = @mysqli_query($conn, $strSQL,$conn)

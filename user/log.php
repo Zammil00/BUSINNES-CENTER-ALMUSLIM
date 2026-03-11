@@ -11,7 +11,7 @@ $cek = mysqli_query($conn, "SELECT * FROM pelanggan WHERE username_plg='$usernam
         $c = mysqli_fetch_array($cek); 
 	        $_SESSION['username_plg'] = $c['username_plg'];
 			$_SESSION['password'] = $c['password']; 
-            header("location:/percetakan/user/page/index.php"); 
+            header("location:/businnes-center/user/page/index.php"); 
 	        } 
 	    else{ 
 	         die("Maaf Username dan Password Anda Salah Coba Login Kembali ! <a href=\"javascript:history.back()\">Kembali</a>"); 
@@ -21,7 +21,7 @@ $cek = mysqli_query($conn, "SELECT * FROM pelanggan WHERE username_plg='$usernam
     if($op=="out"){ 
 	    unset($_SESSION['username_plg']);
 		unset($_SESSION['password']); 
-	    header("location:/percetakan/user/index.php"); 
+	    header("location:/businnes-center/user/index.php"); 
 	} 
     }
 	?> 

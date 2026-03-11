@@ -69,7 +69,8 @@ body,td,th {
 }
 .style15 {font-family: Arial, Helvetica, sans-serif}
 -->
-</style></head>
+</style>    <link rel="stylesheet" type="text/css" href="/businnes-center/assets/css/modern.css" />
+</head>
 
 <body>
 <h3>Penambahan Data Barang Masuk </h3>

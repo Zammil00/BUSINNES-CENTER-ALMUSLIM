@@ -62,7 +62,8 @@ body,td,th {
 	font-family: Arial, Helvetica, sans-serif;
 }
 -->
-</style></head>
+</style>    <link rel="stylesheet" type="text/css" href="/businnes-center/assets/css/modern.css" />
+</head>
 
 <body>
 <h3>Penambahan Data Pemasok </h3>

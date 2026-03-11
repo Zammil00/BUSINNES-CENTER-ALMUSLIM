@@ -8,6 +8,7 @@ if($_SESSION['level']=='manager') {
 <title>Untitled Document</title>
 <link rel="stylesheet" type="text/css" href="assets/css/tcal.css" />
 <script type="text/javascript" src="assets/js/tcal.js"></script>
+    <link rel="stylesheet" type="text/css" href="/businnes-center/assets/css/modern.css" />
 </head>
 <body>
 <h3>Laporan Barang Masuk</h3>

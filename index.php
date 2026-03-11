@@ -25,174 +25,75 @@ if (!empty($_POST['submit'])) {
     }
 }
 ?>
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml">
+<!DOCTYPE html>
+<html lang="id">
 <head>
-<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
-<title>Selamat Datang di Sistem Informasi Persediaan Barang Pada BUSINESS CENTER UNIVERSITAS ALMUSLIM</title>
-<style type="text/css">
-<!--
-body,td,th {
-	font-family: Arial, Helvetica, sans-serif;
-	font-size: 14px;
-}
-#Layer1 {
-	position:absolute;
-	left:37px;
-	top:52px;
-	width:501px;
-	height:18px;
-	z-index:1;
-}
-body {
-	margin-left: 0px;
-	margin-top: 0px;
-	margin-right: 0px;
-	margin-bottom: 0px;
-	background-image: url(../img/bg.jpg); background-attachment:fixed
-}
-#Layer2 {
-	position:absolute;
-	left:28px;
-	top:9px;
-	width:68px;
-	height:41px;
-	z-index:1;
-}
-#Layer3 {
-	position:absolute;
-	left:120px;
-	top:21px;
-	width:750px;
-	height:24px;
-	z-index:2;
-}
-.style2 {
-	font-size: 24px;
-	color: #FFFFFF;
-	font-weight: bold;
-}
-.tdmenu {
-	height: 410px;
-	width: 205px;
-	padding-right: 8px;
-	padding-left: 8px;
-	border: 1px solid #CCCCCC;
-}
-.style3 {font-size: 12px}
-.style4 {
-	font-size: 14px;
-	font-weight: bold;
-}
-.tdmenu2 {
-	border: 1px solid #CCCCCC;
-	height: 410px;
-	width: 98.5%;
-	border-collapse: collapse;
-}
-.tabel {
-	border: 1px solid #CCCCCC;
-	border-collapse: collapse;
-}
-.button {
-	background-image: url(../img/button-bg.png);
-	background-repeat: repeat-x;
-	background-position: center top;
-	font-family: Arial, Helvetica, sans-serif;
-	font-size: 13px;
-	color: #000000;
-	border: 1px solid #999999;
-	padding: 1px;
-	width: 60px;
-	font-weight: normal;
-}
-.style5 {color: #FFFFFF}
-a:link {
-	text-decoration: none;
-}
-a:visited {
-	text-decoration: none;
-}
-a:hover {
-	text-decoration: underline;
-}
-a:active {
-	text-decoration: none;
-}
--->
-</style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sistem Informasi Persediaan Barang | Business Center Almuslim</title>
+    <link rel="stylesheet" type="text/css" href="assets/css/modern.css">
 </head>
-
 <body>
-<div id="Layer2">
-  <div align="center"><img src="assets/img/printing_terminal_logo.png" width="63" height="53" /></div>
-</div>
-<div class="style2" id="Layer3">Sistem Informasi Persediaan Barang Pada BUSINESS CENTER UNIVERSITAS ALMUSLIM</div>
-<table width="99%" border="0" align="center" cellpadding="0" cellspacing="0" class="tabel">
-  <tr>
-    <td height="75" colspan="3" background="assets/img/1.png">&nbsp;</td>
-  </tr>
-  <tr>
-    <td width="18%" bgcolor="#FFFFFF"><div class="tdmenu">
-<?php
-if (empty($_SESSION['user'])) { 
-?>
-      <h3 class="judul">Silahkan Login</h3>
-      <p align="justify" class="style3">Untuk bisa mengakses aplikasi ini, silahkan anda login dengan menggunakan username dan password yang anda miliki, jika belum memiliki password silahkan hubungi administrator !</p>
-      <table width="100%">
-        <form method="post" action="index.php">
-          <tr>
-            <td><span class="style3">Username</span></td>
-            <td><input type="text" name="username" size="15" /></td>
-          </tr>
-          <tr>
-            <td><span class="style3">Password</span></td>
-            <td><input type="password" name="password" size="15" /></td>
-          </tr>
-          <tr>
-            <td colspan="2"><input name="submit" type="submit" class="button" value="Login" /></td>
-          </tr>
-        </form>
-      </table>
-<?php
-} else { 
-    include('menu.php');
-}
 
-if (!empty($_GET['err'])) {
-?>
-      <p class="style4"><font color="red">Gagal Login .. !!<br/>
-        Cek Username dan Password</font></p>
-<?php 
-} 
-?>
-    </div></td>
-    <td width="0%" bgcolor="#FFFFFF">&nbsp;</td>
-    <td width="82%" bgcolor="#FFFFFF"><div class="tdmenu2">
-      <table width="98%" border="0" align="center" cellpadding="0" cellspacing="0">
-        <tr>
-          <td><span class="td_konten">
-<?php 
-if (!empty($_GET['file'])) {
-    $file_path = "file/" . basename($_GET['file']) . ".php";
-    if (file_exists($file_path)) {
-        include($file_path);
-    } else {
-        echo "<h2>Error !<br/>Halaman tidak ditemukan !</h2>";
-    }
-} else {
-    include('file/intro.php');
-}
-?>
-          </span></td>
-        </tr>
-      </table>
-    </div></td>
-  </tr>
-  <tr>
-    <td height="42" colspan="3" align="center" background="assets/img/botbar-bg.png"><span class="style5">Created by: Fitriani &copy; 2012<br />
-    Best viewed in Mozilla Firefox, Google Chrome, and Opera</span></td>
-  </tr>
-</table>
+<div class="app-container">
+    <!-- Header -->
+    <header class="modern-header">
+        <img src="assets/img/printing_terminal_logo.png" alt="Logo Almuslim">
+        <h1>Sistem Informasi Persediaan Barang<br>BUSINESS CENTER UNIVERSITAS ALMUSLIM</h1>
+    </header>
+
+    <!-- Main Flex Area -->
+    <div class="main-content-area">
+        
+        <!-- Sidebar -->
+        <aside class="sidebar">
+            <?php if (empty($_SESSION['user'])) { ?>
+                <h3 class="judul">Silahkan Login</h3>
+                <p style="font-size:13px; color:#555; margin-bottom:15px;">Akses dengan menggunakan username dan password Anda.</p>
+                <form method="post" action="index.php">
+                    <label>Username</label>
+                    <input type="text" name="username" required>
+                    
+                    <label>Password</label>
+                    <input type="password" name="password" required>
+                    
+                    <button type="submit" name="submit" value="Login" class="button" style="width:100%;">Masuk Sistem</button>
+                    
+                    <?php if (!empty($_GET['err'])) { ?>
+                        <div class="error-alert">
+                            <strong>Gagal Login.</strong><br>Cek kembali Username dan Password Anda.
+                        </div>
+                    <?php } ?>
+                </form>
+            <?php } else { 
+                include('menu.php');
+            } ?>
+        </aside>
+
+        <!-- Dynamic Content -->
+        <main class="page-content">
+            <?php 
+            if (!empty($_GET['file'])) {
+                $file_path = "file/" . basename($_GET['file']) . ".php";
+                if (file_exists($file_path)) {
+                    include($file_path);
+                } else {
+                     echo "<div class='error-alert'><h2>Error!</h2>Halaman tidak ditemukan.</div>";
+                }
+            } else {
+                include('file/intro.php');
+            }
+            ?>
+        </main>
+        
+    </div>
+
+    <!-- Footer -->
+    <footer class="modern-footer">
+        Created by: FADHIL &copy; <?php echo date("Y"); ?> <br/>
+        Sistem Informasi Persediaan Barang - Business Center Universitas Almuslim
+    </footer>
+</div>
+
 </body>
 </html>

@@ -23,7 +23,8 @@ body,td,th {
 	font-weight: bold;
 }
 -->
-</style></head>
+</style>    <link rel="stylesheet" type="text/css" href="/businnes-center/assets/css/modern.css" />
+</head>
 
 <body>
 <table width="240" border="0" cellpadding="0" cellspacing="0">

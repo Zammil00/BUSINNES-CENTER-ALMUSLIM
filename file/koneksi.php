@@ -2,9 +2,9 @@
 $hostmysql = "localhost";
 $username = "root";
 $password = "";
-$database = "percetakan";
+$database = "bc";
 
-$conn = mysql_connect($hostmysql, $username, $password);
+$conn = mysqli_connect($hostmysql, $username, $password);
 if (!$conn) die ("Koneksi gagal");
-mysql_select_db($database,$conn) or die ("Database tidak ditemukan");
+mysqli_select_db($conn, $database) or die ("Database tidak ditemukan");
 ?>

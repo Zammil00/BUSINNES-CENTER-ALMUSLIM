@@ -21,7 +21,7 @@ setInterval( "slideSwitch()", 4000 );
 	include"koneksi.php";
 	if(!isset($_SESSION['username_plg']) or !isset($_SESSION['password']))
 { 
-   die("Mohon daftar atau login dulu !! <a href='/percetakan/user/index.php'>Kembali</a>"); 
+   die("Mohon daftar atau login dulu !! <a href='/businnes-center/user/index.php'>Kembali</a>"); 
 }
 ?>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
@@ -110,56 +110,40 @@ body,td,th {
 	font-weight: bold;
 }
 </style> 
+    <link rel="stylesheet" type="text/css" href="/businnes-center/assets/css/modern.css" />
 </head>
 <body>
-<table width="960" border="0" align="center" cellpadding="0" cellspacing="0">
-  <tr>
-    <td height="36" colspan="2" bgcolor="#000000"><table width="98%" height="23" border="0" align="center" cellpadding="0" cellspacing="0">
-      <tr>
-        <td><? include 'menu.php'; ?></td>
-      </tr>
-    </table></td>
-  </tr>
-  <tr>
-    <td height="210" colspan="2">
-<div id="slideshow">
-<!-- Tambahkan gambar2 slide show disini -->
-<div class="active"><img src="../gallery/1.jpg" width="960" height="300" /></div>
-<div><img src="../gallery/2.jpg" /></div>
-<div><img src="../gallery/3.jpg" /></div>
-<div><img src="../gallery/4.jpg" /></div>
-<div><img src="../gallery/5.jpg" /></div>
-<div><img src="../gallery/6.jpg" /></div>
-<div><img src="../gallery/7.jpg" /></div>
-<div><img src="../gallery/8.jpg" /></div>
-<div><img src="../gallery/9.jpg" /></div>
-</div>	</td>
-  </tr>
-  <tr>
-    <td height="16" colspan="2" bgcolor="#FFFFFF"></td>
-  </tr>
-  <tr>
-    <td width="24%" valign="top" bgcolor="#FFFFFF"><table width="229" border="0" align="center" cellpadding="0" cellspacing="0">
-      <tr>
-        <td width="24%" bgcolor="#FFFFFF"><? include 'poll.php'; ?></td>
-      </tr>
-      <tr>
-        <td bgcolor="#FFFFFF">&nbsp;</td>
-      </tr>
-      <tr>
-        <td bgcolor="#FFFFFF"><? include 'dat.php'; ?></td>
-      </tr>
-      <tr>
-        <td bgcolor="#FFFFFF">&nbsp;</td>
-      </tr>
-      <tr>
-        <td bgcolor="#FFFFFF"><? include 'hits.php'; ?></td>
-      </tr>
-      <tr>
-        <td bgcolor="#FFFFFF">&nbsp;</td>
-      </tr>
-    </table></td>
-    <td width="76%" valign="top" bgcolor="#FFFFFF"><table width="94%" border="0" align="center" cellpadding="0" cellspacing="0">
+<div class="app-container">
+    <!-- Top Navigation Menu -->
+    <nav class="frontend-nav">
+        <?php include '../menu.php'; ?>
+    </nav>
+    
+    <!-- Hero Slider -->
+    <div id="slideshow">
+        <div class="active"><img src="../../uploads/gallery/1.jpg" alt="Slide 1" /></div>
+        <div><img src="../../uploads/gallery/2.jpg" alt="Slide 2" /></div>
+        <div><img src="../../uploads/gallery/3.jpg" alt="Slide 3" /></div>
+        <div><img src="../../uploads/gallery/4.jpg" alt="Slide 4" /></div>
+        <div><img src="../../uploads/gallery/5.jpg" alt="Slide 5" /></div>
+        <div><img src="../../uploads/gallery/6.jpg" alt="Slide 6" /></div>
+        <div><img src="../../uploads/gallery/7.jpg" alt="Slide 7" /></div>
+        <div><img src="../../uploads/gallery/8.jpg" alt="Slide 8" /></div>
+        <div><img src="../../uploads/gallery/9.jpg" alt="Slide 9" /></div>
+    </div>
+
+    <!-- Main Content Flex -->
+    <div class="main-content-area">
+        <!-- Sidebar Widgets -->
+        <aside class="sidebar">
+            <div style="margin-bottom: 25px;"><?php include '../reg.php'; ?></div>
+            <div style="margin-bottom: 25px;"><?php include '../poll.php'; ?></div>
+            <div style="margin-bottom: 25px;"><?php include '../dat.php'; ?></div>
+            <div><?php include '../hits.php'; ?></div>
+        </aside>
+        
+        <!-- Center Content -->
+        <main class="page-content">
       <tr>
         <td height="40" align="center"><span class="style9">Kontak Kami </span></td>
       </tr>
@@ -167,16 +151,15 @@ body,td,th {
         <td><div align="justify">Hubungi: <strong>Admin</strong> <br />
               </div></td>
       </tr>
-    </table></td>
-  </tr>
-  
-  <tr>
-    <td colspan="2" bgcolor="#FFFFFF">&nbsp;</td>
-  </tr>
-  <tr>
-    <td height="40" colspan="2" align="center" background="../../img/menu.jpg"><span class="style8">Created by: Fitriani &copy; 2012<br />
-Best viewed in Mozilla Firefox, Google Chrome, and Opera</span></td>
-  </tr>
-</table>
+            </main>
+    </div>
+    
+    <!-- Footer -->
+    <footer class="modern-footer">
+        Created by: FADHIL &copy; <?php echo date("Y"); ?><br />
+        Best viewed in Google Chrome, Mozilla Firefox, and Safari <br/>
+        Business Center Universitas Almuslim
+    </footer>
+</div>
 </body>
 </html>
