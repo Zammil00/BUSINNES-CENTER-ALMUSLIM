@@ -7,23 +7,7 @@ $query = "select * from permintaan where no_permintaan='".mysqli_real_escape_str
 $result = mysqli_query($conn, $query);  
 $permintaan = mysqli_fetch_array($result);  
 ?>
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml">
-<head>
-<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
-<title>Untitled Document</title>
-<style type="text/css">
-<!--
-body,td,th {
-	font-family: Arial, Helvetica, sans-serif;
-}
-.style15 {font-family: Arial, Helvetica, sans-serif}
-.style17 {font-family: Arial, Helvetica, sans-serif; font-size: 14px; }
--->
-</style>    <link rel="stylesheet" type="text/css" href="/businnes-center/assets/css/modern.css" />
-</head>
 
-<body>
 <h3>Pengeditan Data Permintaan Barang</h3>
 <p>Untuk melakukan transaksi, silahkan isi pada kolom yang disediakan.</p>
 <form id="form1" name="form1" method="post" action="index.php?file=proses_permintaan_barang_edit">
@@ -75,8 +59,7 @@ body,td,th {
     </tr>
   </table>
 </form>
-</body>
-</html>
+
 <?php
 } else {
 echo"Akses ditolak !";

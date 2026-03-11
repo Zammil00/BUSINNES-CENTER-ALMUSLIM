@@ -44,21 +44,7 @@ function validasi_input(form){
   }
   }
  </script>
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml">
-<head>
-<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
-<title>Untitled Document</title>
-<style type="text/css">
-<!--
-body,td,th {
-	font-family: Arial, Helvetica, sans-serif;
-}
--->
-</style>    <link rel="stylesheet" type="text/css" href="/businnes-center/assets/css/modern.css" />
-</head>
 
-<body>
 <h3> Penambahan Data Produk </h3>
 <p>Untuk melakukan transaksi, silahkan isi pada kolom yang disediakan.</p>
 <form action="index.php?file=produk_save" method="post" enctype="multipart/form-data" name="form" onSubmit="return validasi_input(this)">
@@ -86,12 +72,11 @@ body,td,th {
     <tr valign="baseline">
       <td align="left" valign="middle" nowrap>&nbsp;</td>
       <td align="left" valign="middle"><input name="Submit" type="submit" value="Simpan">
-      <input type="reset" value="Batal" /></td>
+      <button type="reset" class="button" style="background:#555;"  />Batal</button></td>
     </tr>
   </table>
 </form>
-</body>
-</html>
+
 <?php
 } else {
 echo"Akses ditolak !";

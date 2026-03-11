@@ -5,21 +5,7 @@ $query = "select * from stok_barang where kd_barang='".mysqli_real_escape_string
 $result = mysqli_query($conn, $query);  
 $stok = mysqli_fetch_array($result);  
 ?>
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml">
-<head>
-<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
-<title>Untitled Document</title>
-<style type="text/css">
-<!--
-body,td,th {
-	font-family: Arial, Helvetica, sans-serif;
-}
--->
-</style>    <link rel="stylesheet" type="text/css" href="/businnes-center/assets/css/modern.css" />
-</head>
 
-<body>
 <h3>Edit Data Stok Barang</h3>
 <p>Untuk melakukan pengeditan, silahkan isi pada kolom yang disediakan.</p>
 <form method="post" name="form1" action="index.php?file=proses_stok_barang_edit">
@@ -42,13 +28,12 @@ body,td,th {
     </tr>
     <tr valign="baseline">
       <td align="left" valign="middle" nowrap>&nbsp;</td>
-      <td align="left" valign="middle"><input type="submit" value="Simpan">
+      <td align="left" valign="middle"><button type="submit" class="button" >Simpan</button>
       <input name="Reset" type="reset" value="Batal" /></td>
     </tr>
   </table>
 </form>
-</body>
-</html>
+
 <?php
 } else {
 echo"Akses ditolak !";

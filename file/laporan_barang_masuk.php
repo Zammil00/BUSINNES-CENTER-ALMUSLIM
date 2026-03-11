@@ -6,52 +6,16 @@ if(isset($_GET['tgl_masuk']) && $_GET['tgl_masuk']){
     $sql = "select * from barang_masuk where tgl_masuk like '%$tgl_masuk%'";  
     $hasil = mysqli_query($conn, $sql);  
 ?>
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml">
-<head>
-<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
-<title>Laporan Barang Masuk</title>
-<style type="text/css">
-@media print {
-input.noPrint { display: none; }
-}
-</style>
-<style type="text/css">
-<!--
-.style71 {color: #FFFFFF;
-	font-weight: bold;
-}
-.style73 {font-size: 18px}
-.tabel {border: 1px solid #CCCCCC;
-	border-collapse: collapse;
-}
-body,td,th {
-	font-family: Arial, Helvetica, sans-serif;
-	font-size: 13px;
-}
-.style61 {font-family: Arial, Helvetica, sans-serif; font-size: 12px; }
--->
-</style>
-    <link rel="stylesheet" type="text/css" href="/businnes-center/assets/css/modern.css" />
-</head>
 
-<body>
-<table width="90%" border="0" align="center" cellpadding="0" cellspacing="0">
-  <tr>
-    <td height="64" align="center"><span class="style73">LAPORAN BARANG MASUK <br />
-      BUSINESS CENTER UNIVERSITAS ALMUSLIM </span></td>
-  </tr>
-  
-  <tr>
-    <td><table width="100%" border="1" bordercolor="#CCCCCC" class="tabel">
+<table class="tabel-data">
       <tr>
-        <td width="12%" height="33" align="center" valign="middle" bgcolor="#689105"><span class="style71">No. Permintaan</span></td>
-		<td width="14%" align="center" valign="middle" bgcolor="#689105"><span class="style71">Tgl. Masuk</span></td>
-        <td width="14%" align="center" valign="middle" bgcolor="#689105"><span class="style71">Kode Barang </span></td>
-        <td width="16%" align="center" valign="middle" bgcolor="#689105"><span class="style71">Nama Barang </span></td>
-        <td width="19%" align="center" valign="middle" bgcolor="#689105"><span class="style71">Nama Pemasok</span></td>
-        <td width="13%" align="center" valign="middle" bgcolor="#689105"><span class="style71">Jumlah Barang </span></td>
-        <td width="13%" align="center" valign="middle" bgcolor="#689105"><span class="style71">Total Harga </span></td>
+        <th width="12%" height="33" align="center" valign="middle" >No. Permintaan</th>
+		<th width="14%" align="center" valign="middle" >Tgl. Masuk</th>
+        <th width="14%" align="center" valign="middle" >Kode Barang </th>
+        <th width="16%" align="center" valign="middle" >Nama Barang </th>
+        <th width="19%" align="center" valign="middle" >Nama Pemasok</th>
+        <th width="13%" align="center" valign="middle" >Jumlah Barang </th>
+        <th width="13%" align="center" valign="middle" >Total Harga </th>
         </tr>
 <?php 
 while ($baris = mysqli_fetch_array($hasil)){ 
@@ -97,5 +61,4 @@ if(mysqli_num_rows($hasil) > 0){
     <td><input class="noPrint" type="button" value="Cetak" onclick="javascript:window.print();"> <input class="noPrint" type="button" value="Tutup" onclick="javascript:window.close();"></td>
   </tr>
 </table>
-</body>
-</html>
+

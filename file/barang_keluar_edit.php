@@ -29,22 +29,7 @@ $query = "select * from barang_keluar where no_pemesan='".mysqli_real_escape_str
 $result = mysqli_query($conn, $query);  
 $keluar = mysqli_fetch_array($result);  
 ?>
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml">
-<head>
-<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
-<title>Untitled Document</title>
-<style type="text/css">
-<!--
-body,td,th {
-	font-family: Arial, Helvetica, sans-serif;
-}
-.style17 {font-family: Arial, Helvetica, sans-serif; font-size: 14px; }
--->
-</style>    <link rel="stylesheet" type="text/css" href="/businnes-center/assets/css/modern.css" />
-</head>
 
-<body>
 <h3>Pengeditan Data Barang Keluar </h3>
 <p>Untuk melakukan pengeditan, silahkan isi pada kolom yang disediakan.</p>
 <form method="post" name="form1" action="index.php?file=proses_barang_keluar_edit">
@@ -128,12 +113,11 @@ body,td,th {
     <tr valign="baseline">
       <td align="left" valign="middle" nowrap>&nbsp;</td>
       <td align="left" valign="middle"><input name="Submit" type="submit" value="Simpan">
-      <input type="reset" value="Batal" /></td>
+      <button type="reset" class="button" style="background:#555;"  />Batal</button></td>
     </tr>
   </table>
 </form>
-</body>
-</html>
+
 <?php
 } else {
 echo"Akses ditolak !";
