@@ -88,7 +88,7 @@
 
         <div class="info-grid">
             <div class="info-card">
-                <img src="../assets/img/printing_terminal_logo.png" style="height:60px; margin-bottom:20px;" alt="Terpercaya">
+                <img src="../assets/images/logo almuslim.jpg" style="height:60px; margin-bottom:20px;" alt="Terpercaya">
                 <h3>Terpercaya & Profesional</h3>
                 <p>Dilengkapi sistem pengadaan barang (Supply Chain) yang transparan dan didukung teknologi inventaris terkini.</p>
             </div>
@@ -135,3 +135,4 @@
 
 </body>
 </html>
+

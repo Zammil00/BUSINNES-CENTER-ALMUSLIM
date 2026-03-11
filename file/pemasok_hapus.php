@@ -9,3 +9,4 @@ $hasil = mysqli_query($conn, $query);
 ?><script>document.location.href="index.php?file=pemasok_view"</script><?
 }
 ?>
+

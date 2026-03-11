@@ -39,3 +39,4 @@ $stok = mysqli_fetch_array($result);
 echo"Akses ditolak !";
 }
 ?>
+

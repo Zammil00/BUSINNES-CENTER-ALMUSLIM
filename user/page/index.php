@@ -32,7 +32,7 @@ if(!isset($_SESSION['username_plg']) or !isset($_SESSION['password'])) {
                 <h2 style="margin:0;">Dashboard Member</h2>
                 <p style="margin:5px 0 0 0; opacity:0.8; font-size:14px;">Selamat datang kembali, <?php echo $_SESSION['username_plg']; ?>!</p>
             </div>
-            <img src="/businnes-center/assets/img/printing_terminal_logo.png" style="height:40px;" alt="Logo">
+            <img src="/businnes-center/assets/images/logo almuslim.jpg" style="height:40px;" alt="Logo">
         </div>
 
         <div class="member-container">
@@ -92,3 +92,4 @@ if(!isset($_SESSION['username_plg']) or !isset($_SESSION['password'])) {
     </footer>
 </body>
 </html>
+

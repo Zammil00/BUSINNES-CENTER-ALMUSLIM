@@ -7,3 +7,4 @@ if (isset($_POST['data_barang'])) {
 		
 	}
 ?>	
+

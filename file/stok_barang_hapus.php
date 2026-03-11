@@ -9,3 +9,4 @@ $hasil = mysqli_query($conn, $query);
 ?><script>document.location.href="index.php?file=stok_barang_view"</script><?
 }
 ?>
+

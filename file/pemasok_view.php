@@ -40,3 +40,4 @@ echo "
 echo"Akses ditolak !";
 }
 ?>
+
