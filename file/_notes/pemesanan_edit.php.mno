@@ -1,0 +1,4 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<info>
+	<infoitem key="UD_w" value="name:no_pemesan;datatype:int,name:nama_pemesan;datatype:string,name:nama_Barang;datatype:string,name:jml_Barang;datatype:int,name:harga_satuan;datatype:string,name:total;datatype:string" />
+</info>

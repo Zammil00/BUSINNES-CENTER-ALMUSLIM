@@ -1,0 +1,4 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<info>
+	<infoitem key="UD_t" value="name:kd_barang;datatype:int,name:nm_barang;datatype:string,name:hrg_barang;datatype:int,name:foto;datatype:blob" />
+</info>

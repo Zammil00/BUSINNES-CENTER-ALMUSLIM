@@ -1,0 +1,4 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<info>
+	<infoitem key="UD_s" value="name:id_plg;datatype:int,name:username_plg;datatype:string,name:password;datatype:string,name:nm_pelanggan;datatype:string,name:alamat;datatype:string,name:email;datatype:string,name:notelp_plg;datatype:string" />
+</info>

@@ -1,0 +1,4 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<info>
+	<infoitem key="UD_r" value="name:id_bayar;datatype:int,name:nama_barang;datatype:string,name:no_rekening;datatype:string,name:nama_bank;datatype:string,name:nominal_pembayaran;datatype:int,name:id_plg;datatype:int" />
+</info>

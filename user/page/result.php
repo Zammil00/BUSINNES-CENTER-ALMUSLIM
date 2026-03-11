@@ -1,0 +1,54 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+<title>Hasil Jajak Pendapat</title>
+<style type="text/css">
+<!--
+body,td,th {
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 13px;
+}
+-->
+</style></head>
+
+<body>
+Hasil jajak pendapat adalah sebagai berikut: <br />
+<br />
+<?
+error_reporting(E_ALL ^ (E_NOTICE | E_WARNING));
+$host = "localhost";
+$user = "root";
+$pswd = "";
+$player = $_POST['player'];
+$conn = @mysql_connect($host,$user,$pswd)
+or die("Koneksi gagal: " . mysql_error());
+mysql_select_db("percetakan",$conn);
+// mengupdate suara
+$strSQL = "update favplayer set suara=suara+1 where nama='$player'";
+$upd = @mysql_query($strSQL,$conn)
+or die("Query salah: " . mysql_error());
+// menghitung total suara
+$strSQL = "select sum(suara) from favplayer";
+$totsuara = @mysql_query($strSQL,$conn)
+or die("Query salah: " . mysql_error());
+// menampilkan hasil dengan
+// bantuan tabel HTML
+echo "<table>";
+$strSQL = "select * from favplayer";
+$qry = @mysql_query($strSQL,$conn)
+or die("Query salah: " . mysql_error());
+while ($row = mysql_fetch_array($qry)) {
+echo "<tr>";
+echo "<td> $row[nama] </td>";
+echo "<td>";
+$pct = $row["suara"]/$totsuara;
+echo "<img src='bar.gif' height='10' width='$pct'>";
+echo "</td>";
+echo "<td> $row[suara] </td>";
+echo "</tr>";
+}
+echo "</table>";
+?>
+</body>
+</html>

@@ -1,0 +1,4 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<info>
+	<infoitem key="UD_a" value="name:no_permintaan;datatype:int,name:tgl_permintaan;datatype:string,name:id_pemasok;datatype:string,name:nama_pemasok;datatype:string" />
+</info>
