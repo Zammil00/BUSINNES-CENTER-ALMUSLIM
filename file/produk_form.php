@@ -1,84 +1,50 @@
 <?php
 if($_SESSION['level']=='user') {
 ?>
-<script type="text/javascript" src="assets/js/jquery-1.3.2.min.js"></script>
- <script type="text/javascript">
-   $(document).ready(function(){
-			
-			$("#kd_barang").change( function() {
-	        $.ajax({
-	            type: "POST",
-	            data: "data_barang=" + $(this).val(),
-	            url: "data.php",
-	            success: function(msg){
-	                if (msg != ''){
-	                    $("#nm_barang").val(msg);
-	                }
-	            }
-		
-	       });
-	
-	    });
-		
-	});
-</script>
-</script>
-<script type="text/javascript">
-function validasi_input(form){
-  if (form.kd_barang.value == "pilih"){
-    alert("Kode barang masih kosong!");
-    return (false);
-  }
-  if (form.hrg_barang.value == ""){
-    alert("Harga barang masih kosong!");
-    form.hrg_barang.focus();
-    return (false);
-  }
-  if (form.picture.value == ""){
-    alert("Foto barang masih kosong!");
-    form.picture.focus();
-    return (false);
-  }
-  else {
-  return (true);
-  }
-  }
- </script>
 
-<h3> Penambahan Data Produk </h3>
-<p>Untuk melakukan transaksi, silahkan isi pada kolom yang disediakan.</p>
-<form action="index.php?file=produk_save" method="post" enctype="multipart/form-data" name="form" onSubmit="return validasi_input(this)">
-  <table width="100%" align="center">
-    <tr valign="baseline">
-      <td width="32%" align="left" valign="middle" nowrap>Kode Barang:</td>
-      <td width="68%" align="left" valign="middle"><input name="kd_barang" type="text" value="" size="15" maxlength="10" /></td>
-    </tr>
-    <tr valign="baseline">
-      <td align="left" valign="middle" nowrap>Nama Barang:</td>
-      <td align="left" valign="middle"><input name="nm_barang" type="text" id="nm_barang" value="" size="32" onFocus="true"/></td>
-    </tr>
-    <tr valign="baseline">
-      <td align="left" valign="middle" nowrap>Harga Barang:</td>
-      <td align="left" valign="middle"><input type="text" name="hrg_barang" value="" size="32"></td>
-    </tr>
-    <tr valign="baseline">
-      <td align="left" valign="middle" nowrap>Jumlah Barang:</td>
-      <td align="left" valign="middle"><input type="text" name="jlh_brg" value="" size="32" id="jlh_brg" /></td>
-    </tr>
-    <tr valign="baseline">
-      <td align="left" valign="middle" nowrap>Foto Barang:</td>
-      <td align="left" valign="middle"><input name="picture" type="file" id="picture" size="32" /></td>
-    </tr>
-    <tr valign="baseline">
-      <td align="left" valign="middle" nowrap>&nbsp;</td>
-      <td align="left" valign="middle"><input name="Submit" type="submit" value="Simpan">
-      <button type="reset" class="button" style="background:#555;"  />Batal</button></td>
-    </tr>
-  </table>
-</form>
+<div class="card-header" style="margin-bottom: 20px;">
+    <h2 style="color:var(--primary-green); border-bottom:2px solid var(--accent-green); padding-bottom:10px; margin-bottom:15px;">Tambah Data Produk Baru</h2>
+    <p>Gunakan formulir ini untuk mendaftarkan inventaris produk baru ke dalam sistem.</p>
+</div>
+
+<div class="form-wrapper" style="max-width: 600px; margin: 0 auto; background: #fff; padding: 30px; border-radius: 12px; box-shadow: 0 5px 20px rgba(0,0,0,0.05);">
+    <form action="index.php?file=produk_save" method="post" enctype="multipart/form-data">
+        <div style="margin-bottom: 20px;">
+            <label style="display:block; font-weight:600; margin-bottom:8px; color:#333;">Kode Barang</label>
+            <input name="kd_barang" type="text" placeholder="Contoh: ATK-001" style="width:100%; padding:12px; border:1px solid #ddd; border-radius:8px;" required>
+        </div>
+
+        <div style="margin-bottom: 20px;">
+            <label style="display:block; font-weight:600; margin-bottom:8px; color:#333;">Nama Produk</label>
+            <input name="nm_barang" type="text" placeholder="Masukkan nama barang lengkap..." style="width:100%; padding:12px; border:1px solid #ddd; border-radius:8px;" required>
+        </div>
+
+        <div style="display:grid; grid-template-columns: 1fr 1fr; gap:20px; margin-bottom: 20px;">
+            <div>
+                <label style="display:block; font-weight:600; margin-bottom:8px; color:#333;">Jumlah Stok Awal</label>
+                <input type="number" name="jlh_brg" value="0" min="0" style="width:100%; padding:12px; border:1px solid #ddd; border-radius:8px;" required>
+            </div>
+            <div>
+                <label style="display:block; font-weight:600; margin-bottom:8px; color:#333;">Harga Jual (Rp)</label>
+                <input type="number" name="hrg_barang" placeholder="0" style="width:100%; padding:12px; border:1px solid #ddd; border-radius:8px;" required>
+            </div>
+        </div>
+
+        <div style="margin-bottom: 30px;">
+            <label style="display:block; font-weight:600; margin-bottom:8px; color:#333;">Unggah Foto Produk</label>
+            <input name="picture" type="file" style="font-size:14px;" required>
+            <small style="color:#888; display:block; margin-top:5px;">*Format: JPG, PNG, atau JPEG.</small>
+        </div>
+
+        <div style="display:flex; gap:15px; border-top:1px solid #eee; padding-top:20px;">
+            <button type="submit" name="Submit" class="button" style="flex:2; padding:12px;">Simpan Inventaris</button>
+            <a href="index.php?file=produk_view" class="button" style="flex:1; background:#666; text-align:center; text-decoration:none; padding:12px;">Batal</a>
+        </div>
+    </form>
+</div>
 
 <?php
 } else {
-echo"Akses ditolak !";
+    echo "<div class='error-alert'>Akses ditolak!</div>";
 }
 ?>

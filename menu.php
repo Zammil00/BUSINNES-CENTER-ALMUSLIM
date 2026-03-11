@@ -7,6 +7,8 @@
             <a href="index.php?file=barang_masuk_view" title="Barang Masuk">Barang Masuk</a>
             <a href="index.php?file=barang_keluar_view" title="Barang Keluar">Barang Keluar</a>
             <a href="index.php?file=produk_view" title="Produk">Data Produk</a>
+            <a href="index.php?file=stok_barang_view" title="Stok Barang">Data Stok Barang</a>
+            <a href="index.php?file=pemasok_view" title="Pemasok">Data Pemasok</a>
             <a href="index.php?file=pemesanan_view" title="Pemesanan">Data Pemesanan</a>
             <a href="index.php?file=pembayaran_view" title="Pembayaran">Data Pembayaran</a>
             <a href="index.php?file=pelanggan_view" title="Pelanggan">Data Pelanggan</a>

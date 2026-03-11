@@ -11,10 +11,9 @@ include"koneksi.php";
 $query = "update pemesanan set no_pemesan='$no_pemesan', nama_pemesan='$nama_pemesan', nama_Barang='$nama_Barang', jml_Barang='$jml_Barang', harga_satuan='$harga_satuan', total='$total' where no_pemesan='$no_pemesan'";  
 $hasil = mysqli_query($conn, $query);  
 if($hasil){  
- ?><script language="JavaScript">alert('Data Telah Teredit');
-document.location='index.php?file=pemesanan_view'</script><?  
+ echo "<script language='JavaScript'>alert('Data Telah Teredit'); document.location='index.php?file=pemesanan_view'</script>";  
  }else{  
- ?><script language="JavaScript">alert('Data Belum Teredit'); 
- document.location='index.php?file=pemesanan_view'</script><?  
+ echo "<script language='JavaScript'>alert('Data Belum Teredit'); document.location='index.php?file=pemesanan_view'</script>";  
  }  
 ?> 
+

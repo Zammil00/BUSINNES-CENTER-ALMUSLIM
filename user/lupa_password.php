@@ -1,180 +1,46 @@
-<script src="http://code.jquery.com/jquery-latest.js"></script>
-<script type="text/javascript">
-function slideSwitch() {
-var $active = $('#slideshow DIV.active');
-if ( $active.length == 0 ) $active = $('#slideshow DIV:last');
-var $next = $active.next().length ? $active.next()
-: $('#slideshow DIV:first');
-$active.addClass('last-active');
-$next.css({opacity: 0.0})
-.addClass('active')
-.animate({opacity: 1.0}, 1100, function() {
-$active.removeClass('active last-active');
-});
-}
-$(function() {
-setInterval( "slideSwitch()", 4000 );
-});
-</script> 
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml">
+<!DOCTYPE html>
+<html lang="id">
 <head>
-<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
-<title>Selamat Datang di Website BUSINESS CENTER UNIVERSITAS ALMUSLIM</title>
-<style type="text/css">
-<!--
-a {
-	font-family: Arial, Helvetica, sans-serif;
-	font-size: 13px;
-}
-a:link {
-	text-decoration: none;
-	color: #FFFFFF;
-}
-a:visited {
-	text-decoration: none;
-	color: #FFFFFF;
-}
-a:hover {
-	text-decoration: underline;
-	color: #990000;
-}
-a:active {
-	text-decoration: none;
-	color: #FFFFFF;
-}
--->
-</style>
-<style type="text/css">
-#slideshow {
-	position:relative;
-	height:300px;
-	padding:0px;
-	margin-top: 0px;
-	margin-right: 0;
-	margin-bottom: -10px;
-	margin-left: 0;
-}
-#slideshow DIV {
-position:absolute;
-top:0;
-left:0;
-z-index:8;
-opacity:0.0;
-height: 200px;
-background-color: #FFF;
-    padding:0px;
-    margin:0px;
-}
-#slideshow DIV.active {
-z-index:10;
-opacity:1.0;
-}
-#slideshow DIV.last-active {
-z-index:9;
-}
-#slideshow DIV IMG {
-height: 300px;
-display: block;
-border: 0;
-margin-bottom: 0px;
-}
-body {
-	background-image: url(../img/page_t.jpg); background-attachment:fixed
-}
-.button {font-family: Arial, Helvetica, sans-serif;
-	font-size: 13px;
-	color: #FFFFFF;
-	background-image: url(../img/menu.jpg);
-	background-repeat: repeat-x;
-	background-position: center top;
-	width: 60px;
-	padding: 1px;
-	border: 1px solid #999999;
-}
-body,td,th {
-	font-family: Arial, Helvetica, sans-serif;
-	font-size: 14px;
-}
-.style2 {
-	font-size: 18px;
-	font-weight: bold;
-}
-.style5 {font-size: 16px; font-weight: bold; color: #009999; }
-.style6 {color: #009999}
-.style7 {
-	font-size: 16px;
-	font-weight: bold;
-}
-.style8 {color: #FFFFFF}
-.ar {	border: 1px solid #CC9933;
-	border-collapse: collapse;
-}
-.style55 {font-size: 17px;
-	font-family: Calibri;
-	color: #000000;
-	font-weight: bold;
-}
-</style> 
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lupa Password | Business Center Universitas Almuslim</title>
     <link rel="stylesheet" type="text/css" href="/businnes-center/assets/css/modern.css" />
 </head>
-<body>
-<div class="app-container">
-    <!-- Top Navigation Menu -->
+<body style="background: #F4F8F5;">
+    <!-- Frontend Nav -->
     <nav class="frontend-nav">
         <?php include 'menu.php'; ?>
+        <a href="/businnes-center/login.php" style="background:#0C6136; margin-left:auto;">Login Admin</a>
     </nav>
     
-    <!-- Hero Slider -->
-    <div id="slideshow">
-        <div class="active"><img src="../uploads/gallery/1.jpg" alt="Slide 1" /></div>
-        <div><img src="../uploads/gallery/2.jpg" alt="Slide 2" /></div>
-        <div><img src="../uploads/gallery/3.jpg" alt="Slide 3" /></div>
-        <div><img src="../uploads/gallery/4.jpg" alt="Slide 4" /></div>
-        <div><img src="../uploads/gallery/5.jpg" alt="Slide 5" /></div>
-        <div><img src="../uploads/gallery/6.jpg" alt="Slide 6" /></div>
-        <div><img src="../uploads/gallery/7.jpg" alt="Slide 7" /></div>
-        <div><img src="../uploads/gallery/8.jpg" alt="Slide 8" /></div>
-        <div><img src="../uploads/gallery/9.jpg" alt="Slide 9" /></div>
-    </div>
+    <header class="inner-header">
+        <h1>Bantuan Akses Akun</h1>
+        <p style="margin-top:10px; opacity:0.9;">Gunakan email terdaftar untuk mengatur ulang kata sandi Anda</p>
+    </header>
 
-    <!-- Main Content Flex -->
-    <div class="main-content-area">
-        <!-- Sidebar Widgets -->
-        <aside class="sidebar">
-            <div style="margin-bottom: 25px;"><?php include 'reg.php'; ?></div>
-            <div style="margin-bottom: 25px;"><?php include 'poll.php'; ?></div>
-            <div style="margin-bottom: 25px;"><?php include 'dat.php'; ?></div>
-            <div><?php include 'hits.php'; ?></div>
-        </aside>
-        
-        <!-- Center Content -->
-        <main class="page-content">
-      <tr>
-        <td height="40" align="center"><span class="style2">Silahkan isi email anda </span> </td>
-      </tr>
-      <tr>
-        <td><div align="justify">
-          <table width="460" border="1" align="center" bordercolor="#FFFFFF" class="ar">
-                <tr>
-                  <td width="456" height="27" align="center" valign="middle"><form id="form1" name="form1" method="post" action="kirimpass.php">
-                      <span class="style55">Masukkan Email Anda</span> :
-                    <input name="email" type="text" id="email" size="30" />
-                      <input type="submit" name="Submit" value="Kirim" />
-                  </form></td>
-                </tr>
-              </table>
-        </div></td>
-      </tr>
-            </main>
-    </div>
-    
-    <!-- Footer -->
+    <main class="app-container" style="max-width:600px; margin:40px auto; padding:0 20px;">
+        <div class="card-content" style="text-align:center;">
+            <img src="../assets/img/printing_terminal_logo.png" style="height:60px; margin-bottom:20px; filter: grayscale(1);" alt="Lupa Pass">
+            <h2 style="color:#0C6136; margin-bottom:10px;">Lupa Kata Sandi?</h2>
+            <p style="color:#666; font-size:14px; margin-bottom:30px;">Masukkan alamat email Anda di bawah ini, kami akan mengirimkan instruksi pemulihan akes akun Anda segera.</p>
+
+            <form action="kirimpass.php" method="POST">
+                <div style="margin-bottom:20px;">
+                    <input type="email" name="email" placeholder="contoh@mail.com" required style="width:100%; padding:14px; border:1px solid #ddd; border-radius:8px; font-family:inherit; font-size:15px; text-align:center;">
+                </div>
+                <button type="submit" class="button" style="width:100%; padding:15px; font-size:16px;">Kirim Tautan Pemulihan</button>
+                <div style="margin-top:20px;">
+                    <a href="index.php" style="color:#15A556; text-decoration:none; font-weight:700; font-size:14px;">Sudah ingat? Kembali ke Home</a>
+                </div>
+            </form>
+        </div>
+    </main>
+
     <footer class="modern-footer">
-        Created by: FADHIL &copy; <?php echo date("Y"); ?><br />
-        Best viewed in Google Chrome, Mozilla Firefox, and Safari <br/>
-        Business Center Universitas Almuslim
+        <h2>Business Center Universitas Almuslim</h2>
+        <div style="margin-top:10px; border-top:1px solid rgba(255,255,255,0.2); padding-top:15px; font-size:13px;">
+            Created by: FADHIL &copy; <?php echo date("Y"); ?>
+        </div>
     </footer>
-</div>
 </body>
 </html>

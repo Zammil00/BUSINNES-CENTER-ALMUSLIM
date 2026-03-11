@@ -7,10 +7,9 @@ include'koneksi.php';
  $query = "insert into permintaan set no_permintaan='$no_permintaan', tgl_permintaan='$tgl_permintaan', nama_pemasok='$nama_pemasok'";  
  $sql = mysqli_query($conn, $query);  
  if($sql){  
- ?><script language="JavaScript">alert('Data Telah Tersimpan');
-document.location='index.php?file=permintaan_barang_form'</script><?  
+ echo "<script language='JavaScript'>alert('Data Telah Tersimpan'); document.location='index.php?file=permintaan_barang_form'</script>";  
  }else{  
- ?><script language="JavaScript">alert('Data Belum Tersimpan'); 
- document.location='index.php?file=permintaan_barang_form'</script><?  
+ echo "<script language='JavaScript'>alert('Data Belum Tersimpan'); document.location='index.php?file=permintaan_barang_form'</script>";  
  }
  ?>
+

@@ -54,6 +54,9 @@ function validasi_input(form){
 
 <h3>Penambahan Data Pemasok </h3>
 <p>Untuk melakukan transaksi, silahkan isi pada kolom yang disediakan.</p>
+
+<div class="form-wrapper" style="background:#fff; padding:30px; border-radius:10px; box-shadow:0 4px 15px rgba(0,0,0,0.05); max-width:800px; margin:0 auto;">
+    <h2 style="color:var(--primary-green); border-bottom:2px solid var(--accent-green); padding-bottom:10px; margin-bottom:20px;">Form Input Pemasok</h2>
 <form method="post" name="form" onSubmit="return validasi_input(this)" action="index.php?file=pemasok_save">
   <table width="100%" align="center">
     <tr valign="baseline">
@@ -79,6 +82,7 @@ function validasi_input(form){
     </tr>
   </table>
 </form>
+</div>
 
 <?php
 } else {

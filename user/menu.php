@@ -1,6 +1,10 @@
-<a href="index.php">Home</a>
-<a href="tentang_kami.php">Tentang Kami</a>
-<a href="page/produk.php">Data Produk</a>
-<a href="page/pemesanan.php">Pemesanan</a>
-<a href="page/pembayaran.php">Pembayaran</a>
-<a href="kontak.php">Hubungi Kami</a>
+<?php
+// Define base URL for frontend links to avoid relative path errors (like /page/page/)
+$base = "/businnes-center/user/";
+?>
+<a href="<?php echo $base; ?>index.php">Home</a>
+<a href="<?php echo $base; ?>tentang_kami.php">Tentang Kami</a>
+<a href="<?php echo $base; ?>page/produk.php">Daftar Produk</a>
+<a href="<?php echo $base; ?>page/pemesanan.php">Pemesanan</a>
+<a href="<?php echo $base; ?>page/pembayaran.php">Pembayaran</a>
+<a href="<?php echo $base; ?>kontak.php">Hubungi Kami</a>

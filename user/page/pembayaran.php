@@ -1,279 +1,95 @@
-<script src="jquery-latest.js"></script>
-<script type="text/javascript">
-function slideSwitch() {
-var $active = $('#slideshow DIV.active');
-if ( $active.length == 0 ) $active = $('#slideshow DIV:last');
-var $next = $active.next().length ? $active.next()
-: $('#slideshow DIV:first');
-$active.addClass('last-active');
-$next.css({opacity: 0.0})
-.addClass('active')
-.animate({opacity: 1.0}, 1100, function() {
-$active.removeClass('active last-active');
-});
-}
-$(function() {
-setInterval( "slideSwitch()", 4000 );
-});
-</script> 
+<?php
+error_reporting(E_ALL ^ (E_NOTICE | E_WARNING));
+include '../koneksi.php';
 
-<script type="text/javascript">
-function validasi_input(form){
-  if (form.id_bayar.value != ""){
-  var x = (form.id_bayar.value);
-  var status = true;
-  var list = new Array("0", "1", "2", "3", "4", "5", "6", "7", "8", "9");
-  for (i=0; i<=x.length-1; i++)
-  {
-  if (x[i] in list) cek = true;
-  else cek = false;
- status = status && cek;
-  }
-  if (status == false)
-  {
-  alert("Id bayar harus angka!");
-  form.id_bayar.focus();
-  return false;
-  }
-  }
- if (form.id_bayar.value == ""){
-    alert("Id bayar masih kosong!");
-    form.id_bayar.focus();
-    return (false);
-  }
- if (form.nama_barang.value == "pilih"){
-    alert("Pilih nama barang!");
-    form.nama_barang.focus();
-    return (false);
-  }
-  if (form.no_rekening.value == ""){
-    alert("No rekening masih kosong!");
-    form.no_rekening.focus();
-    return (false);
-  }
-  if (form.nama_bank.value == ""){
-    alert("Nama bank masih kosong!");
-    form.nama_bank.focus();
-    return (false);
-  }
-  if (form.nominal_pembayaran.value == ""){
-    alert("Nominal pembayaran masih kosong!");
-    form.nominal_pembayaran.focus();
-    return (false);
-  }
-  if (form.id_plg.value == ""){
-    alert("Id pelanggan masih kosong!");
-    form.id_plg.focus();
-    return (false);
-  }
-  else {
-  return (true);
-  }
-  }
- </script>
-<? 
-	session_start(); 
-	include"koneksi.php";
-	if(!isset($_SESSION['username_plg']) or !isset($_SESSION['password']))
-{ 
-   die("Mohon daftar atau login dulu !! <a href='/businnes-center/user/index.php'>Kembali</a>"); 
+$success = false;
+if (isset($_POST['submit'])) {
+    $barang = mysqli_real_escape_string($conn, $_POST['barang']);
+    $rekening = mysqli_real_escape_string($conn, $_POST['rekening']);
+    $bank = mysqli_real_escape_string($conn, $_POST['bank']);
+    $nominal = (int)$_POST['nominal'];
+    
+    $query = "INSERT INTO pembayaran (nama_barang, no_rekening, nama_bank, nominal_pembayaran) 
+              VALUES ('$barang', '$rekening', '$bank', '$nominal')";
+    if (mysqli_query($conn, $query)) {
+        $success = true;
+    }
 }
 ?>
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml">
+<!DOCTYPE html>
+<html lang="id">
 <head>
-<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
-<title>Pembayaran Produk BUSINESS CENTER UNIVERSITAS ALMUSLIM</title>
-<style type="text/css">
-<!--
-a {
-	font-family: Arial, Helvetica, sans-serif;
-	font-size: 13px;
-}
-a:link {
-	text-decoration: none;
-	color: #FFFFFF;
-}
-a:visited {
-	text-decoration: none;
-	color: #FFFFFF;
-}
-a:hover {
-	text-decoration: underline;
-	color: #990000;
-}
-a:active {
-	text-decoration: none;
-	color: #FFFFFF;
-}
--->
-</style>
-<style type="text/css">
-#slideshow {
-	position:relative;
-	height:300px;
-	padding:0px;
-	margin-top: 0px;
-	margin-right: 0;
-	margin-bottom: -10px;
-	margin-left: 0;
-}
-#slideshow DIV {
-position:absolute;
-top:0;
-left:0;
-z-index:8;
-opacity:0.0;
-height: 200px;
-background-color: #FFF;
-    padding:0px;
-    margin:0px;
-}
-#slideshow DIV.active {
-z-index:10;
-opacity:1.0;
-}
-#slideshow DIV.last-active {
-z-index:9;
-}
-#slideshow DIV IMG {
-height: 300px;
-display: block;
-border: 0;
-margin-bottom: 0px;
-}
-body {
-	background-image: url(../../img/page_t.jpg); background-attachment:fixed
-}
-.button {font-family: Arial, Helvetica, sans-serif;
-	font-size: 13px;
-	color: #FFFFFF;
-	background-image: url(../img/menu.jpg);
-	background-repeat: repeat-x;
-	background-position: center top;
-	width: 60px;
-	padding: 1px;
-	border: 1px solid #999999;
-}
-body,td,th {
-	font-family: Arial, Helvetica, sans-serif;
-	font-size: 14px;
-}
-.style8 {color: #FFFFFF}
-.style9 {
-	font-size: 16px;
-	font-weight: bold;
-}
-.style10 {	color: #FF0000;
-	font-size: 10px;
-}
-.style12 {font-size: 11px}
-</style> 
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Konfirmasi Pembayaran | Business Center Universitas Almuslim</title>
     <link rel="stylesheet" type="text/css" href="/businnes-center/assets/css/modern.css" />
+    <style>
+        .form-group { margin-bottom: 20px; text-align: left; }
+        .form-group label { display: block; font-weight: 600; margin-bottom: 8px; color: #333; }
+        .form-group input, .form-group select { 
+            width: 100%; padding: 12px; border: 1px solid #ddd; 
+            border-radius: 8px; font-family: inherit; font-size: 14px;
+        }
+    </style>
 </head>
-<body>
-<div class="app-container">
-    <!-- Top Navigation Menu -->
+<body style="background: #F4F8F5;">
+    <!-- Frontend Nav -->
     <nav class="frontend-nav">
         <?php include '../menu.php'; ?>
+        <a href="/businnes-center/login.php" style="background:#0C6136; margin-left:auto;">Login Admin</a>
     </nav>
     
-    <!-- Hero Slider -->
-    <div id="slideshow">
-        <div class="active"><img src="../../uploads/gallery/1.jpg" alt="Slide 1" /></div>
-        <div><img src="../../uploads/gallery/2.jpg" alt="Slide 2" /></div>
-        <div><img src="../../uploads/gallery/3.jpg" alt="Slide 3" /></div>
-        <div><img src="../../uploads/gallery/4.jpg" alt="Slide 4" /></div>
-        <div><img src="../../uploads/gallery/5.jpg" alt="Slide 5" /></div>
-        <div><img src="../../uploads/gallery/6.jpg" alt="Slide 6" /></div>
-        <div><img src="../../uploads/gallery/7.jpg" alt="Slide 7" /></div>
-        <div><img src="../../uploads/gallery/8.jpg" alt="Slide 8" /></div>
-        <div><img src="../../uploads/gallery/9.jpg" alt="Slide 9" /></div>
-    </div>
+    <header class="inner-header">
+        <h1>Konfirmasi Pembayaran</h1>
+        <p style="margin-top:10px; opacity:0.9;">Lengkapi detail pembayaran Anda untuk verifikasi pesanan</p>
+    </header>
 
-    <!-- Main Content Flex -->
-    <div class="main-content-area">
-        <!-- Sidebar Widgets -->
-        <aside class="sidebar">
-            <div style="margin-bottom: 25px;"><?php include '../reg.php'; ?></div>
-            <div style="margin-bottom: 25px;"><?php include '../poll.php'; ?></div>
-            <div style="margin-bottom: 25px;"><?php include '../dat.php'; ?></div>
-            <div><?php include '../hits.php'; ?></div>
-        </aside>
-        
-        <!-- Center Content -->
-        <main class="page-content">
-      <tr>
-        <td height="40" colspan="2" align="center"><span class="style9">Pembayaran Produk BUSINESS CENTER UNIVERSITAS ALMUSLIM </span></td>
-        </tr>
-      <tr>
-        <td colspan="2"><form name="form" method="post" action="pembayaran_save.php" onSubmit="return validasi_input(this)">
-          <table width="100%" align="center">
-            <tr valign="baseline">
-              <td width="33%" align="left" valign="middle" nowrap>Nama Barang:</td>
-              <td width="67%" align="left" valign="middle"><select name="nama_barang" id="nama_barang">
-                <?php
-   			echo "<option value=pilih>--Pilih--</option>";	
-			$minta = "SELECT nm_barang FROM produk";
-			$eksekusi = mysqli_query($conn, $minta);
-			while($hasil=mysqli_fetch_array($eksekusi))
-			{
-			   echo "<option value='".$hasil['nm_barang']."'>".$hasil['nm_barang']." </option>";		
-			}	
-			?>
-                            </select></td>
-            </tr>
-            <tr valign="baseline">
-              <td align="left" valign="middle" nowrap>No Rekening:</td>
-              <td align="left" valign="middle"><input type="text" name="no_rekening" value="" size="32"></td>
-            </tr>
-            <tr valign="baseline">
-              <td align="left" valign="middle" nowrap>Nama Bank:</td>
-              <td align="left" valign="middle"><input type="text" name="nama_bank" value="" size="32"></td>
-            </tr>
-            <tr valign="baseline">
-              <td align="left" valign="middle" nowrap>Nominal Pembayaran:</td>
-              <td align="left" valign="middle"><input type="text" name="nominal_pembayaran" value="" size="32"></td>
-            </tr>
-            <tr valign="baseline">
-              <td align="left" valign="middle" nowrap>&nbsp;</td>
-              <td align="left" valign="middle"><input name="Submit" type="submit" value="Simpan">
-                  <input name="reset" type="reset" value="Batal" /></td>
-            </tr>
-          </table>
-                </form>        </td>
-        </tr>
-      <tr>
-        <td width="31%">&nbsp;</td>
-        <td width="69%">&nbsp;</td>
-      </tr>
-      <tr>
-        <td colspan="2"><div align="justify"><span class="style12">Setelah anda mentransfer uang anda ke no rekening yang telah tertera di bawah ini, mohon di isi form di atas yang telah kami sediakan untuk kami konfirmasi. </span></div></td>
-      </tr>
-      <tr>
-        <td colspan="2"><strong>Rekening Mandiri </strong></td>
-        </tr>
-      <tr>
-        <td>No rekening </td>
-        <td>: 144.00.1318906.0</td>
-      </tr>
-      <tr>
-        <td>Atas Nama</td>
-        <td>: Iwan Kelana</td>
-      </tr>
-      <tr>
-        <td>KCP</td>
-        <td>: Bireuen </td>
-      </tr>
-            </main>
-    </div>
-    
-    <!-- Footer -->
+    <main class="app-container" style="max-width:800px; margin:40px auto; padding:0 20px;">
+        <div class="card-content">
+            <?php if ($success): ?>
+                <div style="background:#E6F4EA; border-left:5px solid #15A556; padding:20px; border-radius:8px; margin-bottom:30px; color:#0C6136;">
+                    <h3 style="margin-bottom:10px;">Konfirmasi Terkirim!</h3>
+                    <p>Terima kasih. Kami akan segera memvalidasi pembayaran Anda dalam waktu 1x24 jam.</p>
+                </div>
+            <?php endif; ?>
+
+            <form action="pembayaran.php" method="POST">
+                <div class="form-group">
+                    <label>Nama Produk / No. Pesanan</label>
+                    <input type="text" name="barang" placeholder="Contoh: Cetak Undangan / Order #123" required>
+                </div>
+                
+                <div class="form-group">
+                    <label>Nomor Rekening Pengirim</label>
+                    <input type="text" name="rekening" placeholder="Masukkan nomor rekening Anda..." required>
+                </div>
+
+                <div class="form-group">
+                    <label>Nama Bank Pengirim</label>
+                    <input type="text" name="bank" placeholder="Contoh: Bank BSI / Mandiri / BRI" required>
+                </div>
+
+                <div class="form-group">
+                    <label>Nominal Pembayaran (Rp)</label>
+                    <input type="number" name="nominal" placeholder="Masukkan jumlah yang ditransfer..." required>
+                </div>
+
+                <div style="background:#f9f9f9; padding:20px; border-radius:8px; margin-bottom:30px; border:1px dashed #ccc;">
+                    <p style="font-size:14px; color:#666; margin-bottom:10px;">Transfer dikirim ke Rekening Resmi:</p>
+                    <h4 style="color:#0C6136; font-size:18px;">Bank BSI: 7120-000-000</h4>
+                    <p style="font-size:14px; font-weight:700;">A/N: BUSINESS CENTER ALMUSLIM</p>
+                </div>
+
+                <button type="submit" name="submit" class="button" style="width:100%; padding:15px; font-size:16px;">Kirim Konfirmasi Pembayaran</button>
+            </form>
+        </div>
+    </main>
+
     <footer class="modern-footer">
-        Created by: FADHIL &copy; <?php echo date("Y"); ?><br />
-        Best viewed in Google Chrome, Mozilla Firefox, and Safari <br/>
-        Business Center Universitas Almuslim
+        <h2>Business Center Universitas Almuslim</h2>
+        <div style="margin-top:10px; border-top:1px solid rgba(255,255,255,0.2); padding-top:15px; font-size:13px;">
+            Created by: FADHIL &copy; <?php echo date("Y"); ?>
+        </div>
     </footer>
-</div>
 </body>
 </html>

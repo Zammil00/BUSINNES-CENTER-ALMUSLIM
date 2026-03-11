@@ -1,43 +1,10 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml">
-<head>
-<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
-<title>Untitled Document</title>
-<style type="text/css">
-<!--
-.style1 {color: #FFFFFF;
-	font-weight: bold;
-}
-a {
-	font-family: Arial, Helvetica, sans-serif;
-	font-size: 13px;
-}
-a:link {
-	color: #FFFFFF;
-	text-decoration: none;
-}
-a:visited {
-	text-decoration: none;
-	color: #FFFFFF;
-}
-a:hover {
-	text-decoration: underline;
-	color: #FF0000;
-}
-a:active {
-	text-decoration: none;
-	color: #FFFFFF;
-}
-body {
-	background-color: #000000;
-}
-.style2 {color: #FFFFFF}
--->
-</style>
-    <link rel="stylesheet" type="text/css" href="/businnes-center/assets/css/modern.css" />
-</head>
-
-<body>
-<span class="style1"><a href="index.php">Home</a> | <a href="tentang_kami.php">Tentang Kami</a> | <a href="produk.php">Produk</a> | <a href="pemesanan.php">Pemesanan</a> | <a href="pembayaran.php">Pembayaran</a> | <a href="kontak.php">Kontak</a> | <a href="../log.php?op=out">Logout</a></span>
-</body>
-</html>
+<?php
+$base_inner = "/businnes-center/user/page/";
+?>
+<a href="<?php echo $base_inner; ?>index.php">Dashboard Home</a>
+<a href="<?php echo $base_inner; ?>tentang_kami.php">Tentang Kami</a>
+<a href="<?php echo $base_inner; ?>produk.php">Katalog Produk</a>
+<a href="<?php echo $base_inner; ?>pemesanan.php">Buat Pesanan</a>
+<a href="<?php echo $base_inner; ?>pembayaran.php">Informasi Bayar</a>
+<a href="<?php echo $base_inner; ?>kontak.php">Hubungi Admin</a>
+<a href="/businnes-center/user/logout.php" style="background:#d32f2f;">Keluar Sesi</a>

@@ -4,6 +4,9 @@ if($_SESSION['level']=='user') {
 
 <h3>Penambahan Data Pembayaran </h3>
 <p>Untuk melakukan transaksi, silahkan isi pada kolom yang disediakan.</p>
+
+<div class="form-wrapper" style="background:#fff; padding:30px; border-radius:10px; box-shadow:0 4px 15px rgba(0,0,0,0.05); max-width:800px; margin:0 auto;">
+    <h2 style="color:var(--primary-green); border-bottom:2px solid var(--accent-green); padding-bottom:10px; margin-bottom:20px;">Form Input Pembayaran</h2>
 <form method="post" name="form1" action="index.php?file=pembayaran_save">
       <table width="100%" align="center">
         <tr valign="baseline">
@@ -47,6 +50,7 @@ if($_SESSION['level']=='user') {
         </tr>
       </table>
 </form>
+</div>
 
 <?php
 } else {

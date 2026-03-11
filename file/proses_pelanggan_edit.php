@@ -10,10 +10,9 @@ include'koneksi.php';
  $query = "update pelanggan set id_plg='$id_plg', username_plg='$username_plg', nm_pelanggan='$nm_pelanggan', alamat='$alamat', email='$email', notelp_plg='$notelp_plg' where id_plg='$id_plg'";  
  $sql = mysqli_query($conn, $query);  
  if($sql){  
- ?><script language="JavaScript">alert('Data Telah Teredit');
-document.location='index.php?file=pelanggan_view'</script><?  
+ echo "<script language='JavaScript'>alert('Data Telah Teredit'); document.location='index.php?file=pelanggan_view'</script>";  
  }else{  
- ?><script language="JavaScript">alert('Data Belum Teredit'); 
- document.location='index.php?file=pelanggan_view'</script><?  
+ echo "<script language='JavaScript'>alert('Data Belum Teredit'); document.location='index.php?file=pelanggan_view'</script>";  
  }
  ?>
+

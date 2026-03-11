@@ -4,7 +4,12 @@ if($_SESSION['level']=='user') {
 $hasil = mysqli_query($conn, "SELECT * FROM stok_barang ORDER BY kd_barang");
 ?>
 
-<table class="tabel-data">
+
+<div class="card-header" style="margin-bottom: 20px;">
+    <h2 style="color:var(--primary-green); border-bottom:2px solid var(--accent-green); padding-bottom:10px; margin-bottom:15px;">Data Stok Barang</h2>
+    <a href="index.php?file=stok_barang_form" class="button" style="text-decoration:none; display:inline-block; margin-bottom:15px; background:#15A556;">+ Tambah Data Stok Barang</a>
+</div>
+<div style="overflow-x:auto; background:#fff; padding:20px; border-radius:8px; box-shadow:0 2px 10px rgba(0,0,0,0.05);"><table class="tabel-data">
       <tr>
         <th width="17%" height="28" align="center" valign="middle" >Kode Barang</th>
         <th width="27%" align="center" valign="middle" >Nama Barang </th>
@@ -28,9 +33,9 @@ echo "
   <?php
 }
 ?>
-    </table></td>
+    </table></div></div></td>
   </tr>
-</table>
+</table></div>
 
 <?php
 } else {

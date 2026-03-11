@@ -4,7 +4,12 @@ if($_SESSION['level']=='user') {
 $hasil = mysqli_query($conn, "SELECT * FROM pembayaran ORDER BY id_bayar");
 ?>
 
-<table class="tabel-data">
+
+<div class="card-header" style="margin-bottom: 20px;">
+    <h2 style="color:var(--primary-green); border-bottom:2px solid var(--accent-green); padding-bottom:10px; margin-bottom:15px;">Data Pembayaran</h2>
+    <a href="index.php?file=pembayaran_form" class="button" style="text-decoration:none; display:inline-block; margin-bottom:15px; background:#15A556;">+ Tambah Data Pembayaran</a>
+</div>
+<div style="overflow-x:auto; background:#fff; padding:20px; border-radius:8px; box-shadow:0 2px 10px rgba(0,0,0,0.05);"><table class="tabel-data">
       <tr>
         <th width="149" height="33" align="center" valign="middle" >Id. Bayar  </th>
         <th width="188" align="center" valign="middle" >Nama Barang </th>
@@ -27,9 +32,9 @@ echo "
 <td width="149" align="center"><a href="index.php?file=pembayaran_hapus&amp;op=delete&amp;id_bayar=<?=$baris['id_bayar']?>" onclick="return confirm('Apakah anda yakin ingin menghapus ?')">Hapus</a></td>
 </tr>      
 <?php } ?>
-    </table></td>
+    </table></div></div></td>
   </tr>
-</table>
+</table></div>
 
 <?php
 } else {

@@ -8,10 +8,9 @@ include"koneksi.php";
 $query = "update permintaan set no_permintaan='$no_permintaan', tgl_permintaan='$tgl_permintaan', nama_pemasok='$nama_pemasok' where no_permintaan='$no_permintaan'";  
 $hasil = mysqli_query($conn, $query);  
 if($hasil){  
- ?><script language="JavaScript">alert('Data Telah Teredit');
-document.location='index.php?file=permintaan_barang_view'</script><?  
+ echo "<script language='JavaScript'>alert('Data Telah Teredit'); document.location='index.php?file=permintaan_barang_view'</script>";  
  }else{  
- ?><script language="JavaScript">alert('Data Belum Teredit'); 
- document.location='index.php?file=permintaan_barang_view'</script><?  
+ echo "<script language='JavaScript'>alert('Data Belum Teredit'); document.location='index.php?file=permintaan_barang_view'</script>";  
  }  
 ?> 
+

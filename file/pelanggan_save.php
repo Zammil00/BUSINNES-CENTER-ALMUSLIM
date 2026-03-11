@@ -11,10 +11,9 @@ include'koneksi.php';
  $query = "insert into pelanggan set id_plg='$id_plg', username_plg='$username_plg', password='$password', nm_pelanggan='$nm_pelanggan', alamat='$alamat', email='$email', notelp_plg='$notelp_plg'";  
  $sql = mysqli_query($conn, $query);  
  if($sql){  
- ?><script language="JavaScript">alert('Data Telah Tersimpan');
-document.location='index.php?file=pelanggan_form'</script><?  
+ echo "<script language='JavaScript'>alert('Data Telah Tersimpan'); document.location='index.php?file=pelanggan_form'</script>";  
  }else{  
- ?><script language="JavaScript">alert('Data Belum Tersimpan'); 
- document.location='index.php?file=pelanggan_form'</script><?  
+ echo "<script language='JavaScript'>alert('Data Belum Tersimpan'); document.location='index.php?file=pelanggan_form'</script>";  
  }
  ?>
+

@@ -8,10 +8,9 @@ include'koneksi.php';
  $query = "insert into stok_barang set kd_barang='$kd_barang', nm_barang='$nm_barang', hrg_stok='$hrg_stok', jml_stok='$jml_stok'";  
  $sql = mysqli_query($conn, $query);  
  if($sql){  
- ?><script language="JavaScript">alert('Data Telah Tersimpan');
-document.location='index.php?file=stok_barang_form'</script><?  
+ echo "<script language='JavaScript'>alert('Data Telah Tersimpan'); document.location='index.php?file=stok_barang_form'</script>";  
  }else{  
- ?><script language="JavaScript">alert('Data Belum Tersimpan'); 
- document.location='index.php?file=stok_barang_form'</script><?  
+ echo "<script language='JavaScript'>alert('Data Belum Tersimpan'); document.location='index.php?file=stok_barang_form'</script>";  
  }
  ?>
+
