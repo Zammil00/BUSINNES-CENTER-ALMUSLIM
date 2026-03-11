@@ -77,7 +77,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 <body>
 
 <div class="login-container">
-    <img src="assets/images/logo almuslim.jpg" alt="Logo">
+    <img src="assets/images/logo%20almuslim.jpg" alt="Logo">
     <h2>Sistem Persediaan</h2>
     <p>Sign in untuk mengelola inventori Business Center</p>
     
@@ -102,4 +102,5 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
 </body>
 </html>
+
 

@@ -59,7 +59,7 @@ include('koneksi.php');
 <div class="app-container">
     <header class="dashboard-header">
         <div class="brand">
-            <img src="assets/images/logo almuslim.jpg" alt="Logo">
+            <img src="assets/images/logo%20almuslim.jpg" alt="Logo">
             <h1>Business Center Almuslim</h1>
         </div>
         <div class="user-info">
@@ -95,4 +95,5 @@ include('koneksi.php');
 
 </body>
 </html>
+
 

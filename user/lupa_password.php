@@ -20,7 +20,7 @@
 
     <main class="app-container" style="max-width:600px; margin:40px auto; padding:0 20px;">
         <div class="card-content" style="text-align:center;">
-            <img src="../assets/images/logo almuslim.jpg" style="height:60px; margin-bottom:20px; filter: grayscale(1);" alt="Lupa Pass">
+            <img src="../assets/images/logo%20almuslim.jpg" style="height:60px; margin-bottom:20px; filter: grayscale(1);" alt="Lupa Pass">
             <h2 style="color:#0C6136; margin-bottom:10px;">Lupa Kata Sandi?</h2>
             <p style="color:#666; font-size:14px; margin-bottom:30px;">Masukkan alamat email Anda di bawah ini, kami akan mengirimkan instruksi pemulihan akes akun Anda segera.</p>
 
@@ -44,4 +44,5 @@
     </footer>
 </body>
 </html>
+
 

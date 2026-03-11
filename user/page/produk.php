@@ -8,9 +8,16 @@
 </head>
 <body style="background: #F4F8F5;">
     <!-- Frontend Nav -->
+    <!-- Unified Premium Navbar -->
     <nav class="frontend-nav">
-        <?php include '../menu.php'; ?>
-        <a href="/businnes-center/login.php" style="background:#0C6136; margin-left:auto;">Login Admin</a>
+        <a href="/businnes-center/user/index.php" class="nav-brand">
+            <img src="/businnes-center/assets/images/logo%20almuslim.jpg" alt="Logo">
+            <span>ALMUSLIM HUB</span>
+        </a>
+        <div class="nav-links-wrapper">
+            <?php include '../menu.php'; ?>
+        </div>
+        <a href="/businnes-center/login.php" class="admin-login-btn">ADMIN LOGIN</a>
     </nav>
     
     <header class="inner-header">
@@ -89,3 +96,4 @@
     </footer>
 </body>
 </html>
+

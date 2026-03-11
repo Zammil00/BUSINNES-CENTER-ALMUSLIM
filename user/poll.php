@@ -1,63 +1,18 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml">
-<head>
-<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
-<title>Untitled Document</title>
-<style type="text/css">
-<!--
-body,td,th {
-	font-family: Arial, Helvetica, sans-serif;
-	font-size: 13px;
-}
-.button {font-family: Arial, Helvetica, sans-serif;
-	font-size: 13px;
-	color: #FFFFFF;
-	background-image: url(../img/menu.jpg);
-	background-repeat: repeat-x;
-	background-position: center top;
-	width: 60px;
-	padding: 1px;
-	border: 1px solid #999999;
-}
-.style1 {color: #FFFFFF;
-	font-weight: bold;
-}
--->
-</style>    <link rel="stylesheet" type="text/css" href="/businnes-center/assets/css/modern.css" />
-</head>
-
-<body>
-<table width="240" border="0" cellpadding="0" cellspacing="0">
-  <tr>
-    <td height="30" align="center" background="../assets/img/menu.jpg"><span class="style1">Jajak Pendapat</span></td>
-  </tr>
-  <tr>
-    <td bgcolor="#CCCCCC"><table width="235" align="center" cellpadding="3" cellspacing="3">
-      <tr>
-        <td width="38%">Bagaimana menurut Anda tentang konten informasi website ini ? </td>
-      </tr>
-      <tr>
-        <td><form action="result.php" method="post" name="poll" id="poll">
-          <?
+<?php
 include 'koneksi.php';
 $strSQL = "select nama from favplayer";
-$qry = @mysqli_query($conn, $strSQL,$conn)
-or die("Query salah: " . mysqli_error($conn));
-while ($row = mysqli_fetch_array($qry)) {
+$qry = @mysqli_query($conn, $strSQL);
 ?>
-          <input type="radio" name="player" value="<?=$row['nama']?>" />
-          <?=$row['nama']?>
-          <br />
-          <?
-}
-?>
-          <br />
-          <input name="submit" type="submit" class="button" style="background-color:#666666" value="Hasil"/>
-        </form></td>
-      </tr>
-    </table></td>
-  </tr>
-</table>
-</body>
-</html>
-
+<div class="widget-poll" style="text-align: left;">
+    <p style="font-size: 13px; color: #555; margin-bottom: 15px; line-height: 1.4;">Bagaimana menurut Anda tentang kualitas pelayanan di Business Center kami?</p>
+    <form action="result.php" method="post" name="poll" id="poll">
+        <?php while ($row = mysqli_fetch_array($qry)): ?>
+            <label style="display:flex; align-items:center; gap:10px; margin-bottom:8px; cursor:pointer; font-size:14px; color:#444;">
+                <input type="radio" name="player" value="<?php echo $row['nama']; ?>" required style="accent-color:#15A556;">
+                <?php echo $row['nama']; ?>
+            </label>
+        <?php endwhile; ?>
+        
+        <button name="submit" type="submit" class="button" style="width:100%; padding:10px; margin-top:10px; font-size:14px; background:#666;">Kirim Suara</button>
+    </form>
+</div>

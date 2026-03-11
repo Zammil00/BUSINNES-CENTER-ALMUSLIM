@@ -9,3 +9,4 @@ body,td,th {
 <p>Sistem informasi persediaan merupakan sistem aplikasi yang berfungsi untuk memantau mutasi barang beserta jumlah barang yang dimutasi tersebut.</p>
 </html>
 
+

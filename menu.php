@@ -21,7 +21,7 @@ if ($_SESSION['level'] == 'manager') { ?>
         <h3 class="judul">Laporan Manager</h3>
         <nav>
             <a href="index.php" title="Home">Dashboard Home</a>
-            <a href="./file/laporan_stok_barang.php" title="Stok Barang" target="_blank">Laporan Produk</a>
+            <a href="index.php?file=laporan_stok_barang" title="Stok Barang">Laporan Produk</a>
             <a href="index.php?file=set_barang_masuk" title="Barang Masuk">Set Barang Masuk</a>
             <a href="index.php?file=set_barang_keluar" title="Barang Keluar">Set Barang Keluar</a>
         </nav>
@@ -33,4 +33,5 @@ if ($_SESSION['level'] == 'manager') { ?>
         Hapus Sesi (Logout)
     </a>
 </div>
+
 

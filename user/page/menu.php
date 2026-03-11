@@ -9,3 +9,4 @@ $base_inner = "/businnes-center/user/page/";
 <a href="<?php echo $base_inner; ?>kontak.php">Hubungi Admin</a>
 <a href="/businnes-center/user/logout.php" style="background:#d32f2f;">Keluar Sesi</a>
 
+

@@ -54,3 +54,4 @@ $query = mysqli_query($conn, "SELECT * FROM favplayer");
 </body>
 </html>
 
+

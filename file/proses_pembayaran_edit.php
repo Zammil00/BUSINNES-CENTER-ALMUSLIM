@@ -17,3 +17,4 @@ $query = "update pembayaran set id_bayar='$id_bayar', nama_barang='$nama_barang'
  ?>
 
 
+

@@ -64,11 +64,12 @@ margin-bottom: 0px;
 <!-- Tambahkan gambar2 slide show disini -->
 <div class="active"><img src="assets/img/banner.jpg" alt="Produk Bisnis Online" width="206" /></div>
 <div><img src="assets/img/bg.jpg" alt="Penghasilan dari Internet" width="206" /></div>
-<div><img src="assets/images/logo almuslim.jpg" alt="Bisnis online" /></div>
+<div><img src="assets/images/logo%20almuslim.jpg" alt="Bisnis online" /></div>
 <div><img src="assets/img/page_t.jpg" alt="Mencari uang" width="206" /></div>
 </div></td>
   </tr>
 </table>
 </body>
 </html>
+
 
