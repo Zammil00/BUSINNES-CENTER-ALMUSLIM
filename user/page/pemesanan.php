@@ -1,5 +1,5 @@
 <script src="jquery-latest.js"></script>
-<script type="text/javascript" src="jquery-1.3.2.min.js"></script>
+<script type="text/javascript" src="assets/js/jquery-1.3.2.min.js"></script>
 <script type="text/javascript">
 function slideSwitch() {
 var $active = $('#slideshow DIV.active');
@@ -82,7 +82,7 @@ function validasi_input(form){
   }
  </script>
 
-<script type="text/javascript" src="jquery-1.3.2.min.js"></script>
+<script type="text/javascript" src="assets/js/jquery-1.3.2.min.js"></script>
  <script type="text/javascript">
    $(document).ready(function(){
 			
@@ -275,8 +275,8 @@ body,td,th {
            <?php
    			echo "<option value=pilih>--Pilih--</option>";	
 			$minta = "SELECT nm_barang FROM produk";
-			$eksekusi = mysql_query($minta);
-			while($hasil=mysql_fetch_array($eksekusi))
+			$eksekusi = mysqli_query($conn, $minta);
+			while($hasil=mysqli_fetch_array($eksekusi))
 			{
 			   echo "<option value='".$hasil['nm_barang']."'>".$hasil['nm_barang']." </option>";		
 			}	

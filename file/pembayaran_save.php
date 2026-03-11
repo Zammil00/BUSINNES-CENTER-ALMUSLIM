@@ -8,7 +8,7 @@ include'koneksi.php';
  $id_plg = $_POST['id_plg'];
  
  $query = "insert into pembayaran set id_bayar='$id_bayar', nama_barang='$nama_barang', no_rekening='$no_rekening', nama_bank='$nama_bank', nominal_pembayaran='$nominal_pembayaran', id_plg='$id_plg'";  
- $sql = mysql_query($query);  
+ $sql = mysqli_query($conn, $query);  
  if($sql){  
  ?><script language="JavaScript">alert('Data Telah Tersimpan');
 document.location='index.php?file=pembayaran_form'</script><?  

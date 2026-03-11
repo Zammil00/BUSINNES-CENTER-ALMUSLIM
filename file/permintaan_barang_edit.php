@@ -3,9 +3,9 @@ if($_SESSION['level']=='user') {
 ?>
 <?php  
 include"koneksi.php"; 
-$query = "select * from permintaan where no_permintaan='".mysql_real_escape_string($_GET['id'])."'";  
-$result = mysql_query($query);  
-$permintaan = mysql_fetch_array($result);  
+$query = "select * from permintaan where no_permintaan='".mysqli_real_escape_string($conn, $_GET['id'])."'";  
+$result = mysqli_query($conn, $query);  
+$permintaan = mysqli_fetch_array($result);  
 ?>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">

@@ -2,25 +2,28 @@
 error_reporting(E_ALL ^ (E_NOTICE | E_WARNING));
 session_start();
 include('koneksi.php');
-if (!empty($_POST['submit'])){
 
-$perintah_query=mysql_query(" SELECT * FROM tbluser WHERE IDUser = '$_POST[username]' AND Password = '$_POST[password]'"); 
-	if($hasil_cek=mysql_num_rows($perintah_query))
-	{
-	//sukess
-	$datauser=mysql_fetch_array($perintah_query);
-	$_SESSION['user'] = $_POST['username'];
-	$_SESSION['nama'] = $datauser['NamaUser'];
-	$_SESSION['level'] = $datauser['Level'];
-	echo $_SESSION['level'];
-	header("Location: index.php");
-	} else 
-	{   
-// gagal login
-    header("Location: index.php?err=yes");
-
-	}
-	}
+if (!empty($_POST['submit'])) {
+    $username = mysqli_real_escape_string($conn, $_POST['username']);
+    $password = mysqli_real_escape_string($conn, $_POST['password']);
+    
+    $perintah_query = mysqli_query($conn, "SELECT * FROM tbluser WHERE IDUser = '$username' AND Password = '$password'"); 
+    
+    if (mysqli_num_rows($perintah_query) > 0) {
+        // sukses login
+        $datauser = mysqli_fetch_array($perintah_query);
+        $_SESSION['user']  = $username;
+        $_SESSION['nama']  = $datauser['NamaUser'];
+        $_SESSION['level'] = $datauser['Level'];
+        
+        header("Location: index.php");
+        exit;
+    } else {   
+        // gagal login
+        header("Location: index.php?err=yes");
+        exit;
+    }
+}
 ?>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
@@ -46,7 +49,7 @@ body {
 	margin-top: 0px;
 	margin-right: 0px;
 	margin-bottom: 0px;
-	background-image: url(img/bg.jpg); background-attachment:fixed
+	background-image: url(../img/bg.jpg); background-attachment:fixed
 }
 #Layer2 {
 	position:absolute;
@@ -92,7 +95,7 @@ body {
 	border-collapse: collapse;
 }
 .button {
-	background-image: url(img/button-bg.png);
+	background-image: url(../img/button-bg.png);
 	background-repeat: repeat-x;
 	background-position: center top;
 	font-family: Arial, Helvetica, sans-serif;
@@ -122,17 +125,18 @@ a:active {
 
 <body>
 <div id="Layer2">
-  <div align="center"><img src="img/printing_terminal_logo.png" width="63" height="53" /></div>
+  <div align="center"><img src="assets/img/printing_terminal_logo.png" width="63" height="53" /></div>
 </div>
 <div class="style2" id="Layer3">Sistem Informasi Persediaan Barang Pada BUSINESS CENTER UNIVERSITAS ALMUSLIM</div>
 <table width="99%" border="0" align="center" cellpadding="0" cellspacing="0" class="tabel">
   <tr>
-    <td height="75" colspan="3" background="img/1.png">&nbsp;</td>
+    <td height="75" colspan="3" background="assets/img/1.png">&nbsp;</td>
   </tr>
   <tr>
     <td width="18%" bgcolor="#FFFFFF"><div class="tdmenu">
 <?php
-if (empty($_SESSION['user'])) { ?>
+if (empty($_SESSION['user'])) { 
+?>
       <h3 class="judul">Silahkan Login</h3>
       <p align="justify" class="style3">Untuk bisa mengakses aplikasi ini, silahkan anda login dengan menggunakan username dan password yang anda miliki, jika belum memiliki password silahkan hubungi administrator !</p>
       <table width="100%">
@@ -152,13 +156,16 @@ if (empty($_SESSION['user'])) { ?>
       </table>
 <?php
 } else { 
-include('menu.php');
+    include('menu.php');
 }
-if (!empty($_GET[err])){
+
+if (!empty($_GET['err'])) {
 ?>
       <p class="style4"><font color="red">Gagal Login .. !!<br/>
         Cek Username dan Password</font></p>
-      <?php } ?>
+<?php 
+} 
+?>
     </div></td>
     <td width="0%" bgcolor="#FFFFFF">&nbsp;</td>
     <td width="82%" bgcolor="#FFFFFF"><div class="tdmenu2">
@@ -166,18 +173,15 @@ if (!empty($_GET[err])){
         <tr>
           <td><span class="td_konten">
 <?php 
-if(!empty($_GET[file])) 
-{
-	if(file_exists("file/$_GET[file].php")) 
-	{
-	include("file/$_GET[file].php");
-	} else 
-	{
-	echo "<h2>Error !<br/>Halaman tidak ditemukan !</h2>";
-	}
-} else 
-{
-include('file/intro.php');
+if (!empty($_GET['file'])) {
+    $file_path = "file/" . basename($_GET['file']) . ".php";
+    if (file_exists($file_path)) {
+        include($file_path);
+    } else {
+        echo "<h2>Error !<br/>Halaman tidak ditemukan !</h2>";
+    }
+} else {
+    include('file/intro.php');
 }
 ?>
           </span></td>
@@ -186,7 +190,7 @@ include('file/intro.php');
     </div></td>
   </tr>
   <tr>
-    <td height="42" colspan="3" align="center" background="img/botbar-bg.png"><span class="style5">Created by: Fitriani &copy; 2012<br />
+    <td height="42" colspan="3" align="center" background="assets/img/botbar-bg.png"><span class="style5">Created by: Fitriani &copy; 2012<br />
     Best viewed in Mozilla Firefox, Google Chrome, and Opera</span></td>
   </tr>
 </table>

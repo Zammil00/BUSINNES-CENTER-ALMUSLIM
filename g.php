@@ -61,10 +61,10 @@ margin-bottom: 0px;
 
 <div id="slideshow">
 <!-- Tambahkan gambar2 slide show disini -->
-<div class="active"><img src="img/banner.jpg" alt="Produk Bisnis Online" width="206" /></div>
-<div><img src="img/bg.jpg" alt="Penghasilan dari Internet" width="206" /></div>
-<div><img src="img/printing_terminal_logo.png" alt="Bisnis online" /></div>
-<div><img src="img/page_t.jpg" alt="Mencari uang" width="206" /></div>
+<div class="active"><img src="assets/img/banner.jpg" alt="Produk Bisnis Online" width="206" /></div>
+<div><img src="assets/img/bg.jpg" alt="Penghasilan dari Internet" width="206" /></div>
+<div><img src="assets/img/printing_terminal_logo.png" alt="Bisnis online" /></div>
+<div><img src="assets/img/page_t.jpg" alt="Mencari uang" width="206" /></div>
 </div></td>
   </tr>
 </table>

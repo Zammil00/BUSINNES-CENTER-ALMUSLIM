@@ -7,7 +7,7 @@ include'koneksi.php';
  $total  = $_POST['total'];
   
  $query = "insert into pemesanan set nama_pemesan='$nama_pemesan', nm_barang='$nm_barang', jml_Barang='$jml_Barang', hrg_barang='$hrg_barang', total='$total'";  
- $sql = mysql_query($query);  
+ $sql = mysqli_query($conn, $query);  
  if($sql){  
  ?><script language="JavaScript">alert('Terimakasih telah memesan produk kami, Pemesanan akan kirim ke alamat anda');
 document.location='pemesanan.php'</script><?  

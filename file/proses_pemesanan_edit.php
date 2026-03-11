@@ -9,7 +9,7 @@
 //koneksi database  
 include"koneksi.php";  
 $query = "update pemesanan set no_pemesan='$no_pemesan', nama_pemesan='$nama_pemesan', nama_Barang='$nama_Barang', jml_Barang='$jml_Barang', harga_satuan='$harga_satuan', total='$total' where no_pemesan='$no_pemesan'";  
-$hasil = mysql_query($query);  
+$hasil = mysqli_query($conn, $query);  
 if($hasil){  
  ?><script language="JavaScript">alert('Data Telah Teredit');
 document.location='index.php?file=pemesanan_view'</script><?  

@@ -5,7 +5,7 @@ if ($op == "delete")
 {
 $id_pemasok = $_GET['id_pemasok'];
 $query = "DELETE FROM pemasok WHERE id_pemasok = '$id_pemasok'";
-$hasil = mysql_query($query);
+$hasil = mysqli_query($conn, $query);
 ?><script>document.location.href="index.php?file=pemasok_view"</script><?
 }
 ?>

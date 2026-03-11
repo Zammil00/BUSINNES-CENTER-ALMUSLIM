@@ -1,8 +1,8 @@
 <?php  
 include"koneksi.php"; 
-$query = "select * from pelanggan where id_plg='".mysql_real_escape_string($_GET['id'])."'";  
-$result = mysql_query($query);  
-$plg = mysql_fetch_array($result);  
+$query = "select * from pelanggan where id_plg='".mysqli_real_escape_string($conn, $_GET['id'])."'";  
+$result = mysqli_query($conn, $query);  
+$plg = mysqli_fetch_array($result);  
 ?>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">

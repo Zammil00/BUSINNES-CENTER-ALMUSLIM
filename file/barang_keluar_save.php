@@ -9,7 +9,7 @@ include'koneksi.php';
  $nm_pelanggan = $_POST['nm_pelanggan'];
   
  $query = "insert into barang_keluar set no_pemesan='$no_pemesan', kd_barang='$kd_barang', nm_barang='$nm_barang', jml_barang='$jml_barang', total_harga='$total_harga', tgl_pemesanan='$tgl_pemesanan', nm_pelanggan='$nm_pelanggan'";  
- $sql = mysql_query($query);  
+ $sql = mysqli_query($conn, $query);  
  if($sql){  
  ?><script language="JavaScript">alert('Data Telah Tersimpan');
 document.location='index.php?file=barang_keluar_form'</script><?  

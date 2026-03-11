@@ -194,7 +194,7 @@ body,td,th {
     <td colspan="2" bgcolor="#FFFFFF">&nbsp;</td>
   </tr>
   <tr>
-    <td height="41" colspan="2" align="center" background="../img/menu.jpg"><span class="style8">Created by: Fitriani &copy; 2012<br />
+    <td height="41" colspan="2" align="center" background="../assets/img/menu.jpg"><span class="style8">Created by: Fitriani &copy; 2012<br />
 Best viewed in Mozilla Firefox, Google Chrome, and Opera</span></td>
   </tr>
 </table>

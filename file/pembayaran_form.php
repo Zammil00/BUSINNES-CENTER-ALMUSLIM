@@ -45,8 +45,8 @@ body,td,th {
             <?php
    			echo "<option value=not_kode>--- Pilih Id Pelanggan---</option>";	
 			$minta = "SELECT id_plg FROM pelanggan";
-			$eksekusi = mysql_query($minta);
-			while($hasil=mysql_fetch_array($eksekusi))
+			$eksekusi = mysqli_query($conn, $minta);
+			while($hasil=mysqli_fetch_array($eksekusi))
 			{
 			   echo "<option value='".$hasil['id_plg']."'>".$hasil['id_plg']." </option>";		
 			}	

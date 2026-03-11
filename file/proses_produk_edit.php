@@ -11,7 +11,7 @@
 //koneksi database  
 include"koneksi.php";  
 $query = "update produk set kd_barang='$kd_barang', nm_barang='$nm_barang', jlh_brg='$jlh_brg', hrg_barang='$hrg_barang', foto='$foto' where kd_barang='$kd_barang'";  
-$hasil = mysql_query($query);  
+$hasil = mysqli_query($conn, $query);  
 if($hasil){  
  ?><script language="JavaScript">alert('Data Telah Teredit');
  document.location='index.php?file=produk_view'</script><?  

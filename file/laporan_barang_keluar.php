@@ -4,7 +4,7 @@ if(isset($_GET['tgl_pemesanan']) && $_GET['tgl_pemesanan']){
     include 'koneksi.php';  
     $tgl_pemesanan = $_GET['tgl_pemesanan'];  
     $sql = "select * from barang_keluar where tgl_pemesanan like '%$tgl_pemesanan%'";  
-    $hasil = mysql_query($sql);  
+    $hasil = mysqli_query($conn, $sql);  
 ?>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
@@ -56,7 +56,7 @@ body,td,th {
         <td width="203" align="center" valign="middle" bgcolor="#689105"><span class="style71">Nama Pelanggan </span></td>
         </tr>
 <?php 
-while ($baris = mysql_fetch_array($hasil)){
+while ($baris = mysqli_fetch_array($hasil)){
 include "warna_tabel.php";
 echo "
 <tr bgcolor=$warna> 
@@ -73,7 +73,7 @@ echo "
   </tr>
   <tr>
     <td align="center"><?php  
-if(mysql_num_rows($hasil) > 0){
+if(mysqli_num_rows($hasil) > 0){
     }else{  
        echo "<font color=red><blink>Tidak ada data yang dicari!</blink></font>";
     }  

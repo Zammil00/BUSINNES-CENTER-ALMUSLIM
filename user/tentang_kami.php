@@ -162,7 +162,7 @@ body,td,th {
         <td height="40" colspan="2" align="center"><span class="style2">Tentang Kami  BUSINESS CENTER UNIVERSITAS ALMUSLIM</span> </td>
         </tr>
       <tr>
-        <td width="32%"><div align="justify"><img src="../img/mesin cetak.jpg" width="200" height="235" />
+        <td width="32%"><div align="justify"><img src="../assets/img/mesin cetak.jpg" width="200" height="235" />
               </div></td>
         <td width="68%" valign="top"><div align="justify">Di zaman modern seperti sekarang ini, teknologi internet dapat   memberikan  kemudahan dalam memenuhi sebagian kebutuhan kita. Apalagi   saat ini internet sudah bisa diakses dengan mudah dan semakin murah.   Kemudahan tersebut diantaranya ada yang memanfaatkan internet untuk   proses belajar, dan banyak juga yang memanfaatkannya untuk berbelanja .   Sehubungan dengan hal tersebut, berbekal pengalaman yang kami miliki   selama ini di bidang percetakan  mendorong kami untuk turut serta    memanfaatkan ternologi internet ini dalam  memperkenalkan produk dan    percetakan kami.<br />
           <br />
@@ -179,7 +179,7 @@ body,td,th {
     <td colspan="2" bgcolor="#FFFFFF">&nbsp;</td>
   </tr>
   <tr>
-    <td height="41" colspan="2" align="center" background="../img/menu.jpg"><span class="style8">Created by: Fitriani &copy; 2012<br />
+    <td height="41" colspan="2" align="center" background="../assets/img/menu.jpg"><span class="style8">Created by: Fitriani &copy; 2012<br />
 Best viewed in Mozilla Firefox, Google Chrome, and Opera</span></td>
   </tr>
 </table>

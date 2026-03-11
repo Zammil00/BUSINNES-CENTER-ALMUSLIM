@@ -43,7 +43,7 @@ a:active {
 <body>
 <table width="240" border="0" cellspacing="0" cellpadding="0">
   <tr>
-    <td height="30" align="center" background="../img/menu.jpg"><span class="style1">Register</span></td>
+    <td height="30" align="center" background="../assets/img/menu.jpg"><span class="style1">Register</span></td>
   </tr>
   <tr>
     <td bgcolor="#CCCCCC"><form id="form1" name="form1" method="post" action="log.php?op=in">

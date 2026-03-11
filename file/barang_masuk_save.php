@@ -9,7 +9,7 @@ include'koneksi.php';
  $total_harga = $_POST['total_harga'];
   
  $query = "insert into barang_masuk set no_permintaan='$no_permintaan', tgl_masuk='$tgl_masuk', kd_barang='$kd_barang', nm_barang='$nm_barang', nama_pemasok='$nama_pemasok', jml_Barang='$jml_Barang', total_harga='$total_harga'";  
- $sql = mysql_query($query);  
+ $sql = mysqli_query($conn, $query);  
  if($sql){  
  ?><script language="JavaScript">alert('Data Telah Tersimpan');
 document.location='index.php?file=barang_masuk_form'</script><?  

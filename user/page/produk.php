@@ -213,7 +213,7 @@ include'koneksi.php';
 	$adjacents = 3;
  
 	$query = "SELECT COUNT(*) as num FROM $tbl_name";
-	$total_pages = mysql_fetch_array(mysql_query($query));
+	$total_pages = mysqli_fetch_array(mysqli_query($conn, $query));
 	$total_pages = $total_pages['num'];
  
 	/* variabel query. */
@@ -227,7 +227,7 @@ include'koneksi.php';
  
  
 	$sql = "SELECT * FROM $tbl_name LIMIT $start, $limit";
-	$result = mysql_query($sql);
+	$result = mysqli_query($conn, $sql);
  
  
 	if ($page == 0) $page = 1;	//jika variabel kosong maka defaultnya halaman pertama.
@@ -324,7 +324,7 @@ include'koneksi.php';
               <td width="30%" align="center" valign="middle" bgcolor="#F1EE91"><strong>Gambar</strong></td>
             </tr>
             <?php 
-while ($row = mysql_fetch_array($result)){
+while ($row = mysqli_fetch_array($result)){
 include "warna_tabel.php";
 echo "
 <tr bgcolor=$warna> 

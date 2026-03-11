@@ -6,8 +6,8 @@ if($_SESSION['level']=='manager') {
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <title>Untitled Document</title>
-<link rel="stylesheet" type="text/css" href="tcal.css" />
-<script type="text/javascript" src="tcal.js"></script>
+<link rel="stylesheet" type="text/css" href="assets/css/tcal.css" />
+<script type="text/javascript" src="assets/js/tcal.js"></script>
 </head>
 <body>
 <h3>Laporan  Barang Keluar</h3>

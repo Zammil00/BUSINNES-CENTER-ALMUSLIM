@@ -22,23 +22,23 @@ $user = "root";
 $pswd = "";
 $player = $_POST['player'];
 $conn = @mysql_connect($host,$user,$pswd)
-or die("Koneksi gagal: " . mysql_error());
+or die("Koneksi gagal: " . mysqli_error($conn));
 mysql_select_db("percetakan",$conn);
 // mengupdate suara
 $strSQL = "update favplayer set suara=suara+1 where nama='$player'";
-$upd = @mysql_query($strSQL,$conn)
-or die("Query salah: " . mysql_error());
+$upd = @mysqli_query($conn, $strSQL,$conn)
+or die("Query salah: " . mysqli_error($conn));
 // menghitung total suara
 $strSQL = "select sum(suara) from favplayer";
-$totsuara = @mysql_query($strSQL,$conn)
-or die("Query salah: " . mysql_error());
+$totsuara = @mysqli_query($conn, $strSQL,$conn)
+or die("Query salah: " . mysqli_error($conn));
 // menampilkan hasil dengan
 // bantuan tabel HTML
 echo "<table>";
 $strSQL = "select * from favplayer";
-$qry = @mysql_query($strSQL,$conn)
-or die("Query salah: " . mysql_error());
-while ($row = mysql_fetch_array($qry)) {
+$qry = @mysqli_query($conn, $strSQL,$conn)
+or die("Query salah: " . mysqli_error($conn));
+while ($row = mysqli_fetch_array($qry)) {
 echo "<tr>";
 echo "<td> $row[nama] </td>";
 echo "<td>";

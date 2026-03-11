@@ -9,7 +9,7 @@ include'koneksi.php';
  $notelp_plg  = $_POST['notelp_plg'];
   
  $query = "insert into pelanggan set id_plg='$id_plg', username_plg='$username_plg', password='$password', nm_pelanggan='$nm_pelanggan', alamat='$alamat', email='$email', notelp_plg='$notelp_plg'";  
- $sql = mysql_query($query);  
+ $sql = mysqli_query($conn, $query);  
  if($sql){  
  ?><script language="JavaScript">alert('Terima kasih telah mendaftar');
 document.location='daftar_member.php'</script><?  

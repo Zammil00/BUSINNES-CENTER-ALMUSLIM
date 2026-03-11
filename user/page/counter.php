@@ -3,15 +3,15 @@ include "koneksi.php";
 $ip=$_SERVER['REMOTE_ADDR'];
 $tgl=date("Y-m-d");
 $query="select * from iphits where ip='$ip' and tanggal='$tgl'";
-$runquery=mysql_query($query) or die(mysql_error());
-if(mysql_num_rows($runquery)==0){
+$runquery=mysqli_query($conn, $query) or die(mysqli_error($conn));
+if(mysqli_num_rows($runquery)==0){
                 $query="insert into iphits values('$ip','$tgl')";
-                $runquery=mysql_query($query) or die(mysql_error());
+                $runquery=mysqli_query($conn, $query) or die(mysqli_error($conn));
 }
 
 $select="select distinct ip,tanggal from iphits";
-$runselect=mysql_query($select) or die(mysql_error());
-$hit=mysql_num_rows($runselect);
+$runselect=mysqli_query($conn, $select) or die(mysqli_error($conn));
+$hit=mysqli_num_rows($runselect);
 echo "<font color='#000000' face='Maiandra GD'>".$hit.' Pengunjung
 ';
 $num=strlen($hit);

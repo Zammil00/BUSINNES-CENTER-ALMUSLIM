@@ -40,9 +40,9 @@ body,td,th {
           <?
 include 'koneksi.php';
 $strSQL = "select nama from favplayer";
-$qry = @mysql_query($strSQL,$conn)
-or die("Query salah: " . mysql_error());
-while ($row = mysql_fetch_array($qry)) {
+$qry = @mysqli_query($conn, $strSQL,$conn)
+or die("Query salah: " . mysqli_error($conn));
+while ($row = mysqli_fetch_array($qry)) {
 ?>
           <input type="radio" name="player" value="<?=$row['nama']?>" />
           <?=$row['nama']?>

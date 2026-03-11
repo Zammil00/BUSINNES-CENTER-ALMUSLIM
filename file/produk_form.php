@@ -1,7 +1,7 @@
 <?php
 if($_SESSION['level']=='user') {
 ?>
-<script type="text/javascript" src="jquery-1.3.2.min.js"></script>
+<script type="text/javascript" src="assets/js/jquery-1.3.2.min.js"></script>
  <script type="text/javascript">
    $(document).ready(function(){
 			

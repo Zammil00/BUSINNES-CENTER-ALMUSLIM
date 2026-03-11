@@ -1,7 +1,7 @@
 <?php
 if($_SESSION['level']=='user') {
 ?>
-<script type="text/javascript" src="jquery-1.3.2.min.js"></script>
+<script type="text/javascript" src="assets/js/jquery-1.3.2.min.js"></script>
  <script type="text/javascript">
    $(document).ready(function(){
 			
@@ -25,9 +25,9 @@ if($_SESSION['level']=='user') {
 </script>
 <?php  
 include"koneksi.php"; 
-$query = "select * from produk where kd_barang='".mysql_real_escape_string($_GET['id'])."'";  
-$result = mysql_query($query);  
-$produk = mysql_fetch_array($result);  
+$query = "select * from produk where kd_barang='".mysqli_real_escape_string($conn, $_GET['id'])."'";  
+$result = mysqli_query($conn, $query);  
+$produk = mysqli_fetch_array($result);  
 ?>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">

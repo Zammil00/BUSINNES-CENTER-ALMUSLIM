@@ -7,7 +7,7 @@
 //koneksi database  
 include"koneksi.php";  
 $query = "update stok_barang set kd_barang='$kd_barang', nm_barang='$nm_barang', hrg_stok='$hrg_stok', jml_stok='$jml_stok' where kd_barang='$kd_barang'";  
-$hasil = mysql_query($query);  
+$hasil = mysqli_query($conn, $query);  
 if($hasil){  
  ?><script language="JavaScript">alert('Data Telah Teredit');
 document.location='index.php?file=stok_barang_view'</script><?  

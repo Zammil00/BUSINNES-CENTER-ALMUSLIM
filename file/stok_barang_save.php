@@ -6,7 +6,7 @@ include'koneksi.php';
  $jml_stok = $_POST['jml_stok'];
  
  $query = "insert into stok_barang set kd_barang='$kd_barang', nm_barang='$nm_barang', hrg_stok='$hrg_stok', jml_stok='$jml_stok'";  
- $sql = mysql_query($query);  
+ $sql = mysqli_query($conn, $query);  
  if($sql){  
  ?><script language="JavaScript">alert('Data Telah Tersimpan');
 document.location='index.php?file=stok_barang_form'</script><?  

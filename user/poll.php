@@ -28,7 +28,7 @@ body,td,th {
 <body>
 <table width="240" border="0" cellpadding="0" cellspacing="0">
   <tr>
-    <td height="30" align="center" background="../img/menu.jpg"><span class="style1">Jajak Pendapat</span></td>
+    <td height="30" align="center" background="../assets/img/menu.jpg"><span class="style1">Jajak Pendapat</span></td>
   </tr>
   <tr>
     <td bgcolor="#CCCCCC"><table width="235" align="center" cellpadding="3" cellspacing="3">
@@ -40,9 +40,9 @@ body,td,th {
           <?
 include 'koneksi.php';
 $strSQL = "select nama from favplayer";
-$qry = @mysql_query($strSQL,$conn)
-or die("Query salah: " . mysql_error());
-while ($row = mysql_fetch_array($qry)) {
+$qry = @mysqli_query($conn, $strSQL,$conn)
+or die("Query salah: " . mysqli_error($conn));
+while ($row = mysqli_fetch_array($qry)) {
 ?>
           <input type="radio" name="player" value="<?=$row['nama']?>" />
           <?=$row['nama']?>

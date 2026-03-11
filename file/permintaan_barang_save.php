@@ -5,7 +5,7 @@ include'koneksi.php';
  $nama_pemasok = $_POST['nama_pemasok'];
  
  $query = "insert into permintaan set no_permintaan='$no_permintaan', tgl_permintaan='$tgl_permintaan', nama_pemasok='$nama_pemasok'";  
- $sql = mysql_query($query);  
+ $sql = mysqli_query($conn, $query);  
  if($sql){  
  ?><script language="JavaScript">alert('Data Telah Tersimpan');
 document.location='index.php?file=permintaan_barang_form'</script><?  

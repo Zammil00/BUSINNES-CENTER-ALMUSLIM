@@ -1,9 +1,9 @@
 <?php  
 include"koneksi.php"; 
 if($_SESSION['level']=='user') {
-$query = "select * from pembayaran where id_bayar='".mysql_real_escape_string($_GET['id'])."'";  
-$result = mysql_query($query);  
-$bayar = mysql_fetch_array($result);  
+$query = "select * from pembayaran where id_bayar='".mysqli_real_escape_string($conn, $_GET['id'])."'";  
+$result = mysqli_query($conn, $query);  
+$bayar = mysqli_fetch_array($result);  
 ?>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
@@ -49,8 +49,8 @@ body,td,th {
         <?php
    			echo "<option value=not_kode>--- Pilih Id Pelanggan---</option>";	
 			$minta = "SELECT id_plg FROM pelanggan";
-			$eksekusi = mysql_query($minta);
-			while($hasil=mysql_fetch_array($eksekusi))
+			$eksekusi = mysqli_query($conn, $minta);
+			while($hasil=mysqli_fetch_array($eksekusi))
 			{
 			   echo "<option value='".$hasil['id_plg']."'>".$hasil['id_plg']." </option>";		
 			}	

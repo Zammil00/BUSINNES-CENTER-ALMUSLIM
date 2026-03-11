@@ -11,7 +11,7 @@ include'koneksi.php';
  $move = move_uploaded_file($_FILES['picture']['tmp_name'], '../percetakan/foto/'.$foto);
   
  $query = "insert into produk set kd_barang='$kd_barang', nm_barang='$nm_barang', jlh_brg='$jlh_brg', hrg_barang='$hrg_barang', foto='$foto'";  
- $sql = mysql_query($query);  
+ $sql = mysqli_query($conn, $query);  
  if($sql){  
  ?><script language="JavaScript">alert('Data Telah Tersimpan');
 document.location='index.php?file=produk_form'</script><?  

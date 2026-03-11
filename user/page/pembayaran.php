@@ -231,8 +231,8 @@ body,td,th {
                 <?php
    			echo "<option value=pilih>--Pilih--</option>";	
 			$minta = "SELECT nm_barang FROM produk";
-			$eksekusi = mysql_query($minta);
-			while($hasil=mysql_fetch_array($eksekusi))
+			$eksekusi = mysqli_query($conn, $minta);
+			while($hasil=mysqli_fetch_array($eksekusi))
 			{
 			   echo "<option value='".$hasil['nm_barang']."'>".$hasil['nm_barang']." </option>";		
 			}	

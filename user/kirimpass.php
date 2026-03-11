@@ -34,8 +34,8 @@ $newPasswordEnkrip = md5($pengacak . md5($newPassword) . $pengacak);
 
 // mencari alamat email si user
 $query = "SELECT * FROM pelanggan WHERE email = '$email'";
-$hasil = mysql_query($query);
-$data  = mysql_fetch_array($hasil);
+$hasil = mysqli_query($conn, $query);
+$data  = mysqli_fetch_array($hasil);
 $alamatEmail = $data['email'];
 
 // title atau subject email
@@ -55,7 +55,7 @@ if ($kirimEmail) {
 
     // update password baru ke database (jika pengiriman email sukses)
     $query = "UPDATE user SET password = '$newPasswordEnkrip' WHERE username_plg= '$username_plg'";
-    $hasil = mysql_query($query);
+    $hasil = mysqli_query($conn, $query);
 
     if ($hasil) echo "Password baru telah direset dan sudah dikirim ke email Anda";
     }

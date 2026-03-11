@@ -6,9 +6,9 @@ $password = $_POST['password'];
 $op = $_GET['op']; 
  
 if($op=="in"){ 
-$cek = mysql_query("SELECT * FROM pelanggan WHERE username_plg='$username_plg' AND password='$password'"); 
-    if(mysql_num_rows($cek)==1){ 
-        $c = mysql_fetch_array($cek); 
+$cek = mysqli_query($conn, "SELECT * FROM pelanggan WHERE username_plg='$username_plg' AND password='$password'"); 
+    if(mysqli_num_rows($cek)==1){ 
+        $c = mysqli_fetch_array($cek); 
 	        $_SESSION['username_plg'] = $c['username_plg'];
 			$_SESSION['password'] = $c['password']; 
             header("location:/percetakan/user/page/index.php"); 

@@ -6,7 +6,7 @@ include'koneksi.php';
  $nominal_pembayaran = $_POST['nominal_pembayaran'];
   
  $query = "insert into pembayaran set nama_barang='$nama_barang', no_rekening='$no_rekening', nama_bank='$nama_bank', nominal_pembayaran='$nominal_pembayaran'";  
- $sql = mysql_query($query);  
+ $sql = mysqli_query($conn, $query);  
  if($sql){  
  ?><script language="JavaScript">alert('Terima kasih telah melakukan pembayaran, selanjutnya kami akan konfirmasi anda');
 document.location='index.php?file=pembayaran_form'</script><?  

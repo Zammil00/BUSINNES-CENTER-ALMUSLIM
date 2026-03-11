@@ -1,7 +1,7 @@
 <?php
 error_reporting (E_ALL ^ (E_NOTICE | E_WARNING));
 include "koneksi.php";
-$hasil = mysql_query("SELECT * FROM produk ORDER BY kd_barang");
+$hasil = mysqli_query($conn, "SELECT * FROM produk ORDER BY kd_barang");
 ?>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
@@ -44,7 +44,7 @@ body,td,th {
         <td width="18%" align="center" valign="middle" bgcolor="#689105"><span class="style71">Jumlah Barang </span></td>
         </tr>
 <?php 
-while ($baris = mysql_fetch_array($hasil)){
+while ($baris = mysqli_fetch_array($hasil)){
 include "warna_tabel.php";
 echo "
 <tr bgcolor=$warna> 

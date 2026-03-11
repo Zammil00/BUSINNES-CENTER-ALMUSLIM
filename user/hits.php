@@ -19,7 +19,7 @@ body,td,th {
 <body>
 <table width="240" border="0" cellspacing="0" cellpadding="0">
   <tr>
-    <td height="30" align="center" background="../img/menu.jpg"><span class="style1">Hits Counter </span></td>
+    <td height="30" align="center" background="../assets/img/menu.jpg"><span class="style1">Hits Counter </span></td>
   </tr>
   <tr>
     <td align="center" bgcolor="#CCCCCC"><? include "counter.php"; ?></td>

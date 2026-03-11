@@ -8,7 +8,7 @@ include'koneksi.php';
  $total  = $_POST['total'];
   
  $query = "insert into pemesanan set no_pemesan='$no_pemesan', nama_pemesan='$nama_pemesan', nama_Barang='$nama_Barang', jml_Barang='$jml_Barang', harga_satuan='$harga_satuan', total='$total'";  
- $sql = mysql_query($query);  
+ $sql = mysqli_query($conn, $query);  
  if($sql){  
  ?><script language="JavaScript">alert('Data Telah Tersimpan');
 document.location='index.php?file=pemesanan_form'</script><?  

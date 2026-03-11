@@ -5,7 +5,7 @@ if ($op == "delete")
 {
 $kd_barang = $_GET['kd_barang'];
 $query = "DELETE FROM stok_barang WHERE kd_barang = '$kd_barang'";
-$hasil = mysql_query($query);
+$hasil = mysqli_query($conn, $query);
 ?><script>document.location.href="index.php?file=stok_barang_view"</script><?
 }
 ?>
